@@ -1,0 +1,28 @@
+CRITICAL - 2025-06-11 06:33:53 --> ErrorException: unlink(C:\wamp64\www\codeigniter4\writable\debugbar/debugbar_1749576281.401003.json): No such file or directory
+[Method: GET, Route: /]
+in SYSTEMPATH\Debug\Toolbar\Collectors\History.php on line 82.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\wamp64\\www\\codeigniter4\\writable\\debugbar/debugbar_1749576281.401003.json): No such file or directory', 'C:\\wamp64\\www\\codeigniter4\\system\\Debug\\Toolbar\\Collectors\\History.php', 82)
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\History.php(82): unlink('C:\\wamp64\\www\\codeigniter4\\writable\\debugbar/debugbar_1749576281.401003.json')
+ 3 SYSTEMPATH\Debug\Toolbar.php(517): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles('1749623610.416561', 20)
+ 4 SYSTEMPATH\Debug\Toolbar.php(496): CodeIgniter\Debug\Toolbar->format([...], 'html')
+ 5 APPPATH\Config\Events.php(47): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH\Events\Events.php(155): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(339): CodeIgniter\Events\Events::trigger('pre_system')
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 11:23:40 --> ErrorException: include(pages/navbar.php): Failed to open stream: No such file or directory
+[Method: GET, Route: accueil]
+in APPPATH\Views\pages\home.php on line 1.
+ 1 APPPATH\Views\pages\home.php(1): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(pages/navbar.php): Failed to open stream: No such file or directory', 'C:\\wamp64\\www\\codeigniter4\\app\\Views\\pages\\home.php', 1)
+ 2 APPPATH\Views\pages\home.php(1): include()
+ 3 SYSTEMPATH\View\View.php(224): include('C:\\wamp64\\www\\codeigniter4\\app\\Views\\pages\\home.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/home', [], true)
+ 6 APPPATH\Controllers\Accueil.php(18): view('pages/home')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Accueil->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accueil))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

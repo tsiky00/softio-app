@@ -1,0 +1,232 @@
+/* Top Navbar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+.top-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.logo i {
+  margin-right: 10px;
+  color: #ffd700;
+}
+
+.user-info {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Sidebar */
+.sidebar {
+  font-size: 14px;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 190px;
+  height: 100%;
+  background: linear-gradient(180deg, #2d3238 0%, #000000 100%);
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.onglet {
+    border-bottom: 2px solid #4a484a;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+}
+.onglet_btn {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    /* background-color: var(--mycolor); */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    min-width: 100px;
+    padding-inline: 5px;
+    color: #ffffff;
+    border-radius: 7px 7px 0 0;
+    border-bottom: none;
+}
+
+.menu-item span{
+  display: inline-block;
+  width: 22px !important;
+}
+
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+.sidebar-menu {
+  padding: 10px 0;
+}
+
+.menu-item {
+  display: block;
+  padding: 10px 10px;
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-item:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(52, 152, 219, 0.1) 0%,
+    rgba(52, 152, 219, 0.05) 100%
+  );
+  border-left-color: #3498db;
+  color: #3498db;
+  transform: translateX(5px);
+}
+
+.menu-item.active {
+  background: linear-gradient(
+    90deg,
+    rgba(52, 152, 219, 0.2) 0%,
+    rgba(52, 152, 219, 0.1) 100%
+  );
+  border-left-color: #3498db;
+  color: #3498db;
+}
+
+.menu-item i {
+  width: 24px;
+  margin-right: 15px;
+  text-align: center;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 190px;
+  margin-top: 40px;
+  padding: 30px;
+  transition: margin-left 0.3s ease;
+  min-height: calc(100vh - 70px);
+}
+
+.main-content.expanded {
+  margin-left: 0;
+}
+
+.table-container {
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  transition: all 0.3s ease !important;
+}
+
+.btn:hover {
+  transform: translateY(-2px) !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3) !important;
+}
+
+.btn-info {
+  background: linear-gradient(135deg, #17a2b8 0%, #138496 100%) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-info:hover {
+  box-shadow: 0 8px 25px rgba(23, 162, 184, 0.3) !important;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #dc3545 0%, #e74c3c 100%) !important;
+  border: none !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+}
+
+.zone-form{
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}

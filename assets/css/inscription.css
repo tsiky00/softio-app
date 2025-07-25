@@ -1,0 +1,233 @@
+:root {
+  --primary: #4361ee;
+  --primary-dark: #3a56d4;
+  --secondary: #3f37c9;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+body {
+  font-family: 'Inter', sans serif;
+  background-color: #f8fafc;
+  color: var(--dark);
+}
+
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+/* Logo Animation */
+.logo-animation {
+  animation: fadeInDown 1s ease both;
+}
+
+/* Main Box */
+.box {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 15px 50px rgba(67, 97, 238, 0.15);
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: fadeInUp 0.8s ease both 0.3s;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(67, 97, 238, 0.25);
+}
+
+/* Image Column */
+#image {
+  background: var(--gradient);
+  background-size: cover;
+  background-position: center;
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+#image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("caisse.jpg")
+    center/cover;
+  opacity: 1;
+}
+
+#image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: var(--gradient); */
+  opacity: 0.85;
+}
+
+/* Form Section */
+.form-section {
+  padding: 3rem;
+}
+
+.form-section h2 {
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.form-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+.form-section hr {
+  margin: 1.5rem 0;
+  opacity: 0.1;
+}
+
+/* Form Elements */
+.form-control {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+/* Password Strength */
+.password-strength {
+  height: 4px;
+  background: #eee;
+  margin-top: 5px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.strength-meter {
+  height: 100%;
+  width: 0;
+  background: #e74c3c;
+  transition: all 0.3s ease;
+}
+
+/* Terms Checkbox */
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  margin-top: 0.25rem;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.25);
+}
+
+/* Button */
+.btn-primary {
+  background: var(--gradient);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(
+    135deg,
+    var(--primary-dark) 0%,
+    var(--secondary) 100%
+  );
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
+}
+
+/* Login Link */
+.login-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.login-link:hover {
+  color: var(--secondary);
+  transform: translateX(5px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .form-section {
+    padding: 1rem;
+  }
+
+  .box {
+    box-shadow: 0 10px 30px rgba(67, 97, 238, 0.1);
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+#submitBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 40px;
+}
+
+#btnSpinner {
+    order: 1;
+}
+#btnIcon {
+    order: 2;
+}
