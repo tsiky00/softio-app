@@ -3,7 +3,7 @@
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <div class="hero-text">
+            <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
                 <h1 class="slogan"></h1>
                 <p class="description"></p>
                 <div class="hero-buttons">
@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src='' alt="Tableau de bord de softio">
+                <img src='' alt="Tableau de bord de softio" data-aos="fade-left" data-aos-duration="1000">
             </div>
         </div>
     </div>
