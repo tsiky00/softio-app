@@ -22,4 +22,9 @@ class Inscription_model extends Model
     {
         return $this->update($id, $data);
     }
+
+    public function getUserByEmail($email)
+    {
+        return $this->where('email', $email)->first();
+    }
 }

@@ -25,9 +25,8 @@ $(document).ready(function () {
       method: "POST",
       data: formData,
       dataType: "json",
-      contentType: false, // Obligatoire pour FormData
-      processData: false, // Obligatoire pour FormData
-      dataType: "json",
+      contentType: false,
+      processData: false, 
       success: function (response) {
         $("#btnSpinner").addClass("d-none");
         $("#btnText").removeClass("d-none");
@@ -176,15 +175,19 @@ $(document).ready(function () {
     const userId = $(this).data("id");
 
     $.ajax({
-      url: "hero/get-user/" + userId,
+      url: "hero/get-hero/" + userId,
       method: "GET",
+      data: formData,
       dataType: "json",
+      contentType: false,
+      processData: false, 
       success: function (res) {
         if (res.status === "success") {
           const u = res.data;
-          $("#edit-id").val(u.idUtilisateur);
-          $("#edit-nom").val(u.nom);
-          $("#edit-prenom").val(u.prenom);
+          $("#edit-id").val(u.idHero);
+          $("#edit-titre").val(u.titre);
+          $("#edit-description").val(u.description);
+          $("#edit-image").val(u.image);
           $("#editModal").modal("show");
         } else {
           Swal.fire("Erreur", res.message, "error");
@@ -200,7 +203,7 @@ $(document).ready(function () {
   $("#formEdit").on("submit", function (e) {
     e.preventDefault();
     $.ajax({
-      url: "update-user",
+      url: "hero/update-hero",
       method: "POST",
       data: $(this).serialize(),
       dataType: "json",

@@ -2,7 +2,7 @@
 <footer class="modern-footer bg-dark text-white py-5">
     <div class="container">
         <div class="row g-4 align-items-start">
-            <div class="col-lg-6">
+            <div class="col-lg-3">
                 <h5 class="fw-bold mb-4 d-flex align-items-center">
                     <i class="fas fa-cubes me-2" style="color: #ffc107;"></i>SOFTIO
                 </h5>
@@ -15,46 +15,41 @@
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-2">
-                <h6 class="fw-bold mb-4" style="color: #ffc107;">Produit</h6>
+            <div class="col-lg-3">
+                <h6 class="fw-bold mb-4" style="color: #ffc107;">Liens utiles</h6>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="#" class="footer-link">Fonctionnalités</a></li>
-                    <li class="mb-2"><a href="#" class="footer-link">Applications</a></li>
+                    <li class="mb-2"><a href="#" class="footer-link">Expertises</a></li>
+                    <li class="mb-2"><a href="#" class="footer-link">Nos solutions</a></li>
                     <li class="mb-2"><a href="#" class="footer-link">Tarifs</a></li>
-                    <li class="mb-2"><a href="#" class="footer-link">Démo</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-4 col-lg-2">
-                <h6 class="fw-bold mb-4" style="color: #ffc107;">Ressources</h6>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="#" class="footer-link">Documentation</a></li>
                     <li class="mb-2"><a href="#" class="footer-link">Blog</a></li>
-                    <li class="mb-2"><a href="#" class="footer-link">Webinaires</a></li>
-                    <li class="mb-2"><a href="#" class="footer-link">FAQ</a></li>
                 </ul>
             </div>
 
-            <div class="col-md-4 col-lg-2">
-                <h6 class="fw-bold mb-4" style="color: #ffc107;">Entreprise</h6>
+            <div class="col-lg-3">
+                <h6 class="fw-bold mb-4" style="color: #ffc107;">Termes et condition</h6>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="#" class="footer-link">À propos</a></li>
-                    <li class="mb-2"><a href="#" class="footer-link">Carrières</a></li>
-                    <li class="mb-2"><a href="#" class="footer-link">Partenaires</a></li>
-                    <li class="mb-2"><a href="#" class="footer-link">Contact</a></li>
+                    <li class="mb-2"><a href="#" class="footer-link">CCV</a></li>
+                    <li class="mb-2"><a href="#" class="footer-link">GGV</a></li>
+                    <li class="mb-2"><a href="#" class="footer-link">GGU</a></li>
+                    <li class="mb-2"><a href="#" class="footer-link">Politique de confidalité</a></li>
                 </ul>
             </div>
-        </div>
 
-        <hr class="my-4 bg-secondary">
-
-        <div class="row">
-            <div class="col-md-6 text-center text-md-start">
-                <p class="small text-white-50 mb-0">© 2025 softio. Tous droits réservés.</p>
-            </div>
-            <div class="col-md-6 text-center text-md-end">
-                <p class="small text-white-50 mb-0">Version 1.0.0</p>
+            <div class="col-lg-3 formulaire">
+                <h6 class="fw-bold mb-4" style="color: #ffc107;">Nous contacter</h6>
+                <form id="send-data">
+                    <input type="text" class="form-control mb-2" name="nom" id="nom" placeholder="Votre nom">
+                    <div class="invalid-feedback" id="error-nom"></div>
+                    <input type="email" class="form-control mb-2" name="email" id="email" placeholder="Votre email">
+                    <div class="invalid-feedback" id="error-nom"></div>
+                    <textarea name="message" class="form-control mb-2" id="message" placeholder="Votre message"></textarea>
+                    <div class="invalid-feedback" id="error-nom"></div>
+                    <button name="envoyer" class="btn btn-primary form-control" id="envoyer">Envoyer</button>
+                </form>
             </div>
         </div>
     </div>
 </footer>
+<div class="pied">
+    <p class="small text-white-50 mb-0 text-center">© 2025 softio. Tous droits réservés.</p>
+</div>

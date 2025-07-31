@@ -1,0 +1,133 @@
+DEBUG - 2025-07-26 11:48:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-26 16:58:38 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Inscription_model::getUserByEmail
+[Method: POST, Route: login]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Inscription.php(70): CodeIgniter\Model->__call('getUserByEmail', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inscription->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inscription))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-26 16:58:53 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Inscription_model::getUserByEmail
+[Method: POST, Route: login]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Inscription.php(70): CodeIgniter\Model->__call('getUserByEmail', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inscription->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inscription))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-26 17:01:29 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Inscription_model::getUserByEmail
+[Method: POST, Route: login]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Inscription.php(70): CodeIgniter\Model->__call('getUserByEmail', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inscription->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inscription))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-26 17:03:40 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Inscription_model::getUserByEmail
+[Method: POST, Route: login]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Inscription.php(70): CodeIgniter\Model->__call('getUserByEmail', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inscription->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inscription))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-26 17:04:04 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Inscription_model::getUserByEmail
+[Method: POST, Route: login]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Inscription.php(70): CodeIgniter\Model->__call('getUserByEmail', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inscription->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inscription))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-26 17:04:05 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Inscription_model::getUserByEmail
+[Method: POST, Route: login]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Inscription.php(70): CodeIgniter\Model->__call('getUserByEmail', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inscription->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inscription))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-26 17:04:06 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Inscription_model::getUserByEmail
+[Method: POST, Route: login]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Inscription.php(70): CodeIgniter\Model->__call('getUserByEmail', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inscription->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inscription))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-26 17:04:07 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Inscription_model::getUserByEmail
+[Method: POST, Route: login]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Inscription.php(70): CodeIgniter\Model->__call('getUserByEmail', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inscription->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inscription))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-26 17:04:07 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Inscription_model::getUserByEmail
+[Method: POST, Route: login]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Inscription.php(70): CodeIgniter\Model->__call('getUserByEmail', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inscription->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inscription))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-26 17:04:08 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Inscription_model::getUserByEmail
+[Method: POST, Route: login]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Inscription.php(70): CodeIgniter\Model->__call('getUserByEmail', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inscription->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inscription))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-26 17:04:09 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Inscription_model::getUserByEmail
+[Method: POST, Route: login]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Inscription.php(70): CodeIgniter\Model->__call('getUserByEmail', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inscription->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inscription))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-26 17:04:09 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Inscription_model::getUserByEmail
+[Method: POST, Route: login]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Inscription.php(70): CodeIgniter\Model->__call('getUserByEmail', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inscription->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inscription))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-26 17:04:45 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Inscription_model::getUserByEmail
+[Method: POST, Route: login]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Inscription.php(70): CodeIgniter\Model->__call('getUserByEmail', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inscription->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inscription))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-26 17:09:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-26 17:14:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

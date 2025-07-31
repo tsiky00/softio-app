@@ -64,7 +64,7 @@ $(document).ready(function () {
     dataType: "json",
     success: function (response) {
       if (response.status == "success") {
-        getHero(response.data) ;
+        getHero(response.data);
       }
     },
     error: function () {
@@ -75,15 +75,44 @@ $(document).ready(function () {
   function getHero(users) {
     for (let i = 0; i < users.length; i++) {
       let user = users[i];
-      $('.slogan').text(user.titre) ;
-      $('.description').text(user.description) ;
-      $('.hero-image img').attr('src', 'assets/uploads/'+user.image);
+      $(".slogan").text(user.titre);
+      $(".description").text(user.description);
+      $(".hero-image img").attr("src", "assets/uploads/" + user.image);
     }
   }
 });
 
-// apropos 
+/* formulaire de contact */
+$("#send-data").on("submit", function (e) {
+  e.preventDefault();
 
+  // Reset des erreurs
+  $(".form-control").removeClass("is-invalid");
+  $(".invalid-feedback").text("");
+
+  $.ajax({
+    url: "send-message",
+    method: "POST",
+    data: $(this).serialize(),
+    dataType: "json",
+    success: function (response) {
+      if (response.status === "error") {
+        // Gestion des erreurs
+        if (response.errors) {
+          $.each(response.errors, function (key, val) {
+            $(`input[name="${key}"]`).addClass("is-invalid");
+            $(`#error-${key}`).text(val);
+          });
+        }
+      } else if (response.status === "success") {
+        $("#formSend")[0].reset();
+      }
+    },
+    error: function () {
+      alert("une erreur est survenue !");
+    },
+  });
+});
 
 // Initialize AOS
 AOS.init({

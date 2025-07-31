@@ -19,40 +19,21 @@
             <span><i class="fas fa-tachometer-alt"></i></span>
             Dashboard
         </a>
-        <a href="<?= base_url('admin/produit') ?>" class="menu-item">
-            <span><i class="fas fa-edit"></i></span>
-            Produits
-        </a>
-
         <a href="<?= base_url('admin/utilisateur') ?>" class="menu-item">
             <span><i class="fa fa-users"></i></span>
             Utilisateurs
-        </a>
-
-        <a href="#" class="menu-item">
-            <span><i class="fas fa-file"></span></i>
-            Contenu
         </a>
         <a href="#" class="menu-item">
             <span><i class="fa fa-chart-bar"></i></span>
             Statistiques
         </a>
 
-        <!-- Menu déroulant Front Office -->
-        <div class="menu-item has-submenu">
-            <a href="#" onclick="toggleSubMenu(event)">
-                <span><i class="fas fa-cogs"></i></span> Front Office
-                <i class="fas fa-caret-down float-right"></i>
-            </a>
-            <div class="submenu">
-                <a href="<?= base_url('admin/hero') ?>"><i class="fas fa-image"></i> Hero</a>
-                <a href="<?= base_url('admin/fonctionnalite') ?>"><i class="fas fa-cogs"></i> Fonctionnalité</a>
-                <a href="<?= base_url('admin/prix') ?>"><i class="fas fa-money-check"></i> Prix</a>
-                <a href="<?= base_url('admin/apropos') ?>"><i class="fas fa-info-circle"></i> À propos</a>
-                <a href="<?= base_url('admin/contact') ?>"><i class="fas fa-envelope"></i> Contact</a>
-            </div>
-        </div>
-
+        <a href="<?= base_url('admin/hero') ?>" class="menu-item"><span><i class="fas fa-image"></i></span> Hero</a>
+        <a href="<?= base_url('admin/expertise') ?>"  class="menu-item"><span><i class="fas fa-cogs"></i></span> Expértises</a>
+        <a href="<?= base_url('admin/solution') ?>" class="menu-item"><span><i class="fas fa-cogs"></i></span> Nos solutions</a>
+        <a href="<?= base_url('admin/tarifs') ?>" class="menu-item"><span><i class="fas fa-money-check"></i></span> Tarifs</a>
+        <a href="<?= base_url('admin/apropos') ?>" class="menu-item"><span><i class="fas fa-info-circle"></i></span> À propos</a>
+        <a href="<?= base_url('admin/blog') ?>" class="menu-item"><span><i class="fas fa-envelope"></i></span> Blog</a>
         <a href="<?= base_url('deconnexion') ?>" class="menu-item">
             <span><i class="fa fa-sign-out-alt"></i></span>
             Déconnexion

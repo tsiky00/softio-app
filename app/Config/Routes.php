@@ -5,7 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Accueil::index');
 $routes->get('accueil', 'Accueil::index');
 $routes->get('menu-2', 'Accueil::menu2');
 $routes->get('inscription', 'Accueil::inscription');
@@ -33,11 +33,11 @@ $routes->post('admin/update-produit', 'Produit::updateProduit');
 /* categorie */
 $routes->get('admin/hero', 'Admin::hero');
 $routes->get('admin/apropos', 'Admin::apropos');
-$routes->get('admin/produit', 'Admin::produit');
-$routes->get('admin/contact', 'Admin::contact');
-$routes->get('admin/prix', 'Admin::prix');
+$routes->get('admin/solution', 'Admin::solution');
+$routes->get('admin/tarifs', 'Admin::tarif');
 $routes->get('admin/blog', 'Admin::blog');
-$routes->get('admin/fonctionnalite', 'Admin::fonctionnalite');
+$routes->get('admin/statistique', 'Admin::statistique');
+$routes->get('admin/expertise', 'Admin::expertise');
 
 /* section hero */
 $routes->post('admin/hero/create', 'Hero::create');
@@ -47,4 +47,7 @@ $routes->get('admin/hero/get-hero/(:num)', 'Hero::getHero/$1');
 $routes->post('admin/hero/update-hero', 'Hero::updateHero');
 $routes->get('admin/getInfoHero', 'Hero::getInfo');
 
-/* sction apropos */
+/* section apropos */
+
+/* send message */
+$routes->post('send-message', 'Message::save') ;

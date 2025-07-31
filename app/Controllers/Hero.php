@@ -114,4 +114,42 @@ class Hero extends BaseController
             'message' => 'Requête non autorisée.'
         ]);
     }
+
+    public function getHero($id)
+    {
+        $id = intval($id);
+        $model = new Hero_model();
+        $user = $model->getHeroById($id);
+        if ($user) {
+            return $this->response->setJSON(['status' => 'success', 'data' => $user]);
+        } else {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Hero introuvable']);
+        }
+    }
+
+    public function update() {
+        $model = new Hero_model();
+        $id = $this->request->getPost('idUtilisateur');
+        if (!$id) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'ID manquant']);
+        }
+
+        // Récupération de l'image
+        $file = $this->request->getFile('image');
+        $newName = null;
+
+        $data = [
+            'titre'       => $this->request->getPost('titre'),
+            'description' => $this->request->getPost('description'),
+            'image'       => $newName
+        ];
+
+        $model->save($data);
+
+        if ($model->update($id, $data)) {
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Modification réussie']);
+        } else {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Échec de la mise à jour']);
+        }
+    }
 }

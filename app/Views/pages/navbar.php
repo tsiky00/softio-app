@@ -23,19 +23,19 @@
                     <a class="nav-link active" href="#">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Nos services</a>
+                    <a class="nav-link" href="#expertise">Nos expertises</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Nos solutions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tarification</a>
+                    <a class="nav-link" href="#">Tarifs</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#">Nous contacter</a>
                 </li>
             </ul>
 

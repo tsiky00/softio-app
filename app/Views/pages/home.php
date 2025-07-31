@@ -7,8 +7,8 @@
                 <h1 class="slogan"></h1>
                 <p class="description"></p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary">Commencer l'essai gratuit</a>
-                    <a href="#" class="btn btn-outline">Voir la démo</a>
+                    <a href="#" id="essai" class="btn btn-primary">Decouvrer toutes nos solutions</a>
+                    <a href="#" id="demo" class="btn btn-outline">Tester gratuitement</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -19,41 +19,68 @@
 </section>
 
 <!-- Features Section -->
-<section class="section">
+<section class="apropos">
     <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Fonctionnalités puissantes</h2>
-            <p class="section-subtitle">Notre solution élimine les processus manuels et vous permet de gérer votre inventaire de manière efficace et intuitive.</p>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="row" id="centre">
+                    <h1 class="text-justify mb-2 d-block passer">Passer au vert n'est plus aussi chère !</h1>
+                    <p class="text-justify mb-2 d-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi odio vero eveniet cumque commodi doloremque autem tempore inventore quia expedita. Quam, reiciendis dolorem. Vero provident ratione amet maiores in! Ratione.</p>
+                    <button class="voir btn btn-primary w-25 mt-2">VOIR PLUS</button>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row" id="image2">
+
+                </div>
+            </div>
         </div>
-        <div class="features">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>Analytique en temps réel</h3>
-                <p>Obtenez des insights immédiats sur vos performances avec des tableaux de bord personnalisables et des rapports détaillés.</p>
+    </div>
+</section>
+
+<section class=" py-5" id="expertise">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h1 class="passer mb-4 d-block">Nos expertises</h1>
+                <p class="mb-4 d-block">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias et cupiditate quibusdam suscipit eligendi illum deserunt corporis error consequatur enim, vero quasi distinctio nam impedit facere architecto, ratione temporibus ab.</p>
+                <div class="image3 mt-2"></div>
+                <button class="btn expert mt-4 mb-2">Contacter un expert</button>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-cogs"></i>
+            <div class="col-lg-6">
+                <div class="row d-flex gap-3">
+                    <div class=" col-md-6 col-sm-3 card" style="width: 48%;">
+                        <img src="<?= base_url() . 'assets/img/Annotation 2025-07-29 093548.png' ?>" alt="image dans le card">
+                        <div class="card-body">
+                            <h5 class="card-title">Developpement web</h5>
+                            <p class="card-text">Some example text.Some example text.</p>
+                            <a href="#" class="btn btn-primary plus d-flex justify-content-center">Voir plus</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 card" style="width: 48%;">
+                        <img src="<?= base_url() . 'assets/img/Annotation 2025-07-29 093548.png' ?>" alt="image dans le card">
+                        <div class="card-body">
+                            <h5 class="card-title">Developpement web</h5>
+                            <p class="card-text">Some example text.Some example text.</p>
+                            <a href="#" class="btn btn-primary plus d-flex justify-content-center">See Profile</a>
+                        </div>
+                    </div>
                 </div>
-                <h3>Automatisation intelligente</h3>
-                <p>Automatisez vos processus répétitifs et concentrez-vous sur ce qui compte vraiment pour votre entreprise.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-users-cog"></i>
-                </div>
-                <h3>Gestion des équipes</h3>
-                <p>Collaborez efficacement avec votre équipe grâce à des outils de gestion de projets et de communication intégrés.</p>
+        </div>
+    </div>
+</section>
+
+<section id="Nos-solution">
+    <div class="container py-5">
+        <h1 class="passer text-center">Nos solutions</h1>
+        <p class="text-center">Puisque internet est utilisé tous les jours, votre entreprise et votre marque doit être visible sur le toit.</p>
+        <div class="row gap-2">
+            <div class="box">
+                <img src="<?= base_url() . 'assets/img/Annotation 2025-07-29 093548.png' ?>" alt="image dans le card">
+                <h5>logitiel de gestion stock</h5>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-lock"></i>
-                </div>
-                <h3>Sécurité renforcée</h3>
-                <p>Protégez vos données avec notre système de sécurité de niveau entreprise et des sauvegardes automatiques.</p>
-            </div>
+
         </div>
     </div>
 </section>
@@ -106,12 +133,31 @@
     </div>
 </section>
 
-<!-- CTA Section -->
-<section class="cta">
-    <div class="container">
-        <h2>Prêt à révolutionner votre entreprise?</h2>
-        <p>Rejoignez des milliers d'entreprises qui utilisent déjà AppVision pour optimiser leurs opérations et augmenter leur productivité.</p>
-        <a href="#" class="btn btn-white">Commencer l'essai gratuit</a>
+<section id="tarifs">
+    <div class="container py-5">
+        <div class="row">
+            <h1 class="passer text-center mb-5">Tarifs</h1>
+        </div>
+        <div class="row gap-4 d-flex justify-content-center">
+            <div class="card" style="width:40%">
+
+                <div class="card-body">
+                    <h4 class="card-title">John Doe</h4>
+                    <p class="card-text">Some example text.</p>
+                    <a href="#" class="btn btn-primary d-flex justify-content-center contacter">See Profile</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt atque voluptas in soluta, debitis optio similique dolores libero eaque, assumenda facilis odit quas, sequi facere laborum accusamus eos maiores minus?</p>
+                </div>
+            </div>
+            <div class="card" style="width:40%">
+
+                <div class="card-body">
+                    <h4 class="card-title">John Doe</h4>
+                    <p class="card-text">Some example text.</p>
+                    <a href="#" class="btn btn-primary d-flex justify-content-center">See Profile</a>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi, nulla beatae nemo quidem mollitia corrupti pariatur doloremque, blanditiis vel labore ullam magni harum quas voluptas architecto tenetur quod. Alias!</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

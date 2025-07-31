@@ -95,12 +95,6 @@ class Admin extends BaseController
         return redirect()->to(base_url('admin'));
     }
 
-    public function contact()
-    {
-        $content = view('pages/contact');
-        return $this->template('Contact', 'contact.css', $content, 'contact.js');
-    }
-
     public function apropos()
     {
         $content = view('pages/apropos');
@@ -112,9 +106,9 @@ class Admin extends BaseController
         return $this->template('Hero', 'hero.css', $content, 'hero.js');
     }
 
-    public function prix () {
-        $content = view('pages/prix');
-        return $this->template('Prix', 'prix.css', $content, 'prix.js');
+    public function tarif () {
+        $content = view('pages/tarif');
+        return $this->template('Tarifs', 'tarif.css', $content, 'tarif.js');
     }
 
     public function blog () {
@@ -122,8 +116,18 @@ class Admin extends BaseController
         return $this->template('Blog', 'blog.css', $content, 'blog.js');
     }
 
-    public function fonctionnalite () {
-        $content = view('pages/fonctionnalite');
-        return $this->template('Fonctionnalité', 'fonctionnalite.css', $content, 'fonctionnalite.js');
+    public function solution () {
+        $content = view('pages/solution');
+        return $this->template('Nos solution', 'solution.css', $content, 'solution.js');
+    }
+
+    public function expertise () {
+        $content = view('pages/expertise');
+        return $this->template('Expertises', 'expertise.css', $content, 'expertise.js');
+    }
+
+    public function statistique () {
+        $content = view('pages/statistique');
+        return $this->template('Statistique', 'statistique.css', $content, 'statistique.js');
     }
 }

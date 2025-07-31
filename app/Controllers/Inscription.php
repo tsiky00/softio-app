@@ -72,7 +72,7 @@ class Inscription extends BaseController
         if ($user) {
             if (password_verify($password, $user['password'])) {
 
-                // Créer la session locale (facultatif si elle n’est pas utilisée ici)
+                // Créer la session locale 
                 $session = session();
                 $session->set([
                     'idUtilisateur' => $user['idUtilisateur'],
