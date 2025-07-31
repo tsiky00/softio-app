@@ -41,9 +41,9 @@
                     <input type="text" class="form-control mb-2" name="nom" id="nom" placeholder="Votre nom">
                     <div class="invalid-feedback" id="error-nom"></div>
                     <input type="email" class="form-control mb-2" name="email" id="email" placeholder="Votre email">
-                    <div class="invalid-feedback" id="error-nom"></div>
+                    <div class="invalid-feedback" id="error-email"></div>
                     <textarea name="message" class="form-control mb-2" id="message" placeholder="Votre message"></textarea>
-                    <div class="invalid-feedback" id="error-nom"></div>
+                    <div class="invalid-feedback" id="error-message"></div>
                     <button name="envoyer" class="btn btn-primary form-control" id="envoyer">Envoyer</button>
                 </form>
             </div>

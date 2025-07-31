@@ -280,8 +280,30 @@ body {
   text-decoration: none;
 }
 
-.formulaire input {
+/* Footer form input style */
+.formulaire input, .formulaire textarea {
   background: #252733;
+  color: #fff;
+  border: 1px solid #444857;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.formulaire input::placeholder,
+.formulaire textarea::placeholder {
+  color: #b0bec5;
+  opacity: 1;
+}
+
+.formulaire input:focus,
+.formulaire textarea:focus {
+  border-color: #f4d35e;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(244, 211, 94, 0.2);
+  background: #23242f;
+  color: #fff;
 }
 
 .form-control:focus {
@@ -289,9 +311,8 @@ body {
   color: #fff!important;
 }
 
-.formulaire textarea {
-  background: #252733;
-}
+/* handled above with .formulaire input, .formulaire textarea */
+
 
 #envoyer{
   background: #f4d35e!important;
@@ -734,16 +755,14 @@ body {
   background: #fff;
 
 }
-
-.box{
-  width: 100px !important;
-  height: 100px !important;
-  border-radius: 50%;
+.figure:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    transition: 0.3s;
 }
 
-#Nos-solution img{
-  border-radius: 50px!important;
+.figure {
+  margin-right: 15px;
+  margin-top: 20px;
 }
-#Nos-solution .card {
-  box-shadow: none!important;
-}
+

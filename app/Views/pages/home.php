@@ -3,7 +3,7 @@
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+            <div class="hero-text" data-aos="zoom-in" data-aos-duration="1000">
                 <h1 class="slogan"></h1>
                 <p class="description"></p>
                 <div class="hero-buttons">
@@ -22,14 +22,14 @@
 <section class="apropos">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="zoom-in" data-aos-duration="1000">
                 <div class="row" id="centre">
                     <h1 class="text-justify mb-2 d-block passer">Passer au vert n'est plus aussi chère !</h1>
                     <p class="text-justify mb-2 d-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi odio vero eveniet cumque commodi doloremque autem tempore inventore quia expedita. Quam, reiciendis dolorem. Vero provident ratione amet maiores in! Ratione.</p>
                     <button class="voir btn btn-primary w-25 mt-2">VOIR PLUS</button>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
                 <div class="row" id="image2">
 
                 </div>
@@ -65,6 +65,23 @@
                             <a href="#" class="btn btn-primary plus d-flex justify-content-center">See Profile</a>
                         </div>
                     </div>
+
+                    <div class="col-md-6 card" style="width: 48%;">
+                        <img src="<?= base_url() . 'assets/img/Annotation 2025-07-29 093548.png' ?>" alt="image dans le card">
+                        <div class="card-body">
+                            <h5 class="card-title">Developpement web</h5>
+                            <p class="card-text">Some example text.Some example text.</p>
+                            <a href="#" class="btn btn-primary plus d-flex justify-content-center">See Profile</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 card" style="width: 48%;">
+                        <img src="<?= base_url() . 'assets/img/Annotation 2025-07-29 093548.png' ?>" alt="image dans le card">
+                        <div class="card-body">
+                            <h5 class="card-title">Developpement web</h5>
+                            <p class="card-text">Some example text.Some example text.</p>
+                            <a href="#" class="btn btn-primary plus d-flex justify-content-center">See Profile</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,12 +92,68 @@
     <div class="container py-5">
         <h1 class="passer text-center">Nos solutions</h1>
         <p class="text-center">Puisque internet est utilisé tous les jours, votre entreprise et votre marque doit être visible sur le toit.</p>
-        <div class="row gap-2">
-            <div class="box">
-                <img src="<?= base_url() . 'assets/img/Annotation 2025-07-29 093548.png' ?>" alt="image dans le card">
-                <h5>logitiel de gestion stock</h5>
-            </div>
+        <div class="row gap-4">
+            <div class="col text-center">
+                <figure class="figure">
+                    <img src="<?= base_url() . 'assets/img/Fujifilm.png' ?>"
+                        class="figure-img img-fluid rounded-circle"
+                        alt="Description"
+                        style="max-width: 120px;">
+                    <figcaption class="figure-caption mt-2">
+                        <h4>Texte</h4>
+                    </figcaption>
+                </figure>
 
+                <figure class="figure">
+                    <img src="<?= base_url() . 'assets/img/Fujifilm.png' ?>"
+                        class="figure-img img-fluid rounded-circle"
+                        alt="Description"
+                        style="max-width: 120px;">
+                    <figcaption class="figure-caption mt-2">
+                        <h4>Texte</h4>
+                    </figcaption>
+                </figure>
+
+                <figure class="figure">
+                    <img src="<?= base_url() . 'assets/img/Fujifilm.png' ?>"
+                        class="figure-img img-fluid rounded-circle"
+                        alt="Description"
+                        style="max-width: 120px;">
+                    <figcaption class="figure-caption mt-2">
+                        <h4>Texte</h4>
+                    </figcaption>
+                </figure>
+
+                <figure class="figure">
+                    <img src="<?= base_url() . 'assets/img/Fujifilm.png' ?>"
+                        class="figure-img img-fluid rounded-circle"
+                        alt="Description"
+                        style="max-width: 120px;">
+                    <figcaption class="figure-caption mt-2">
+                        <h4>Texte</h4>
+                    </figcaption>
+                </figure>
+
+                <figure class="figure">
+                    <img src="<?= base_url() . 'assets/img/Fujifilm.png' ?>"
+                        class="figure-img img-fluid rounded-circle"
+                        alt="Description"
+                        style="max-width: 120px;">
+                    <figcaption class="figure-caption mt-2">
+                        <h4>Texte</h4>
+                    </figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="<?= base_url() . 'assets/img/Fujifilm.png' ?>"
+                        class="figure-img img-fluid rounded-circle"
+                        alt="Description"
+                        style="max-width: 120px;">
+                    <figcaption class="figure-caption mt-2">
+                        <h4>Texte</h4>
+                    </figcaption>
+                </figure>
+            </div>
+            <!-- Répéter pour chaque élément -->
         </div>
     </div>
 </section>
