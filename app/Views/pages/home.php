@@ -1,6 +1,6 @@
 <?= $this->include("pages/navbar.php") ?>
 <!-- Hero Section -->
-<section class="hero">
+<section id="hero">
     <div class="container">
         <div class="hero-content">
             <div class="hero-text" data-aos="zoom-in" data-aos-duration="1000">
@@ -18,8 +18,7 @@
     </div>
 </section>
 
-<!-- Features Section -->
-<section class="apropos">
+<section id="apropos">
     <div class="container">
         <div class="row">
             <div class="col-lg-6" data-aos="zoom-in" data-aos-duration="1000">
@@ -158,76 +157,43 @@
     </div>
 </section>
 
-<!-- Testimonials Section -->
-<section class="section testimonials">
+<section id="tarifs" class="bg-light py-5">
     <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Ce que nos clients disent</h2>
-            <p class="section-subtitle">Découvrez les témoignages de nos utilisateurs satisfaits</p>
-        </div>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <p>AppVision a complètement transformé notre façon de travailler. La centralisation des données et l'automatisation des processus nous ont fait gagner des heures chaque semaine.</p>
-                </div>
-                <div class="client-info">
-                    <div class="client-avatar">MJ</div>
-                    <div class="client-details">
-                        <h4>Marie Johnson</h4>
-                        <p>Directrice Marketing, TechSolutions</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <p>L'interface est intuitive et la courbe d'apprentissage très rapide. L'équipe de support est réactive et compétente. Un investissement qui s'est amorti en moins de 3 mois.</p>
-                </div>
-                <div class="client-info">
-                    <div class="client-avatar">PD</div>
-                    <div class="client-details">
-                        <h4>Pierre Dubois</h4>
-                        <p>CEO, Innovate Group</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <p>Les fonctionnalités d'analyse nous ont permis d'identifier des opportunités de croissance que nous n'aurions jamais vues autrement. Un outil indispensable pour toute entreprise moderne.</p>
-                </div>
-                <div class="client-info">
-                    <div class="client-avatar">SL</div>
-                    <div class="client-details">
-                        <h4>Sophie Lambert</h4>
-                        <p>Directrice Financière, Global Retail</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="tarifs">
-    <div class="container py-5">
         <div class="row">
-            <h1 class="passer text-center mb-5">Tarifs</h1>
+            <h1 class="text-center mb-5">Nos Tarifs</h1>
         </div>
-        <div class="row gap-4 d-flex justify-content-center">
-            <div class="card" style="width:40%">
-
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text.</p>
-                    <a href="#" class="btn btn-primary d-flex justify-content-center contacter">See Profile</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt atque voluptas in soluta, debitis optio similique dolores libero eaque, assumenda facilis odit quas, sequi facere laborum accusamus eos maiores minus?</p>
+        <div class="row justify-content-center g-4">
+            <!-- Carte 1 -->
+            <div class="col-md-5">
+                <div class="card shadow border-0 h-100">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Location</h4>
+                        <h5 class="text-muted">49 000 Ar / mois</h5>
+                        <p class="mt-3">Parfait pour les particuliers ou les petites structures.</p>
+                        <ul class="list-unstyled my-4">
+                            <li>✔ 10 utilisateurs</li>
+                            <li>✔ Support par e-mail</li>
+                            <li>✔ 5 Go de stockage</li>
+                        </ul>
+                        <a href="#" class="btn w-100 contacter">Choisir</a>
+                    </div>
                 </div>
             </div>
-            <div class="card" style="width:40%">
 
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text.</p>
-                    <a href="#" class="btn btn-primary d-flex justify-content-center">See Profile</a>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi, nulla beatae nemo quidem mollitia corrupti pariatur doloremque, blanditiis vel labore ullam magni harum quas voluptas architecto tenetur quod. Alias!</p>
+            <!-- Carte 2 -->
+            <div class="col-md-5">
+                <div class="card shadow border-0 h-100">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Achat définitif</h4>
+                        <h5 class="text-muted">99 000 Ar / mois</h5>
+                        <p class="mt-3">Adaptée aux entreprises ou aux projets ambitieux.</p>
+                        <ul class="list-unstyled my-4">
+                            <li>✔ Utilisateurs illimités</li>
+                            <li>✔ Support prioritaire</li>
+                            <li>✔ 50 Go de stockage</li>
+                        </ul>
+                        <a href="#" class="btn w-100 contacter">Choisir</a>
+                    </div>
                 </div>
             </div>
         </div>

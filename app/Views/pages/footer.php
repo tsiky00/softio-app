@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="modern-footer bg-dark text-white py-5">
+<footer class="modern-footer bg-dark text-white py-5" id="contact">
     <div class="container">
         <div class="row g-4 align-items-start">
             <div class="col-lg-3">

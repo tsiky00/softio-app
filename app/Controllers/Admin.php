@@ -16,6 +16,15 @@ class Admin extends BaseController
         ]);
     }
 
+    private function checkSession()
+    {
+        if (!session()->get('isLoggedIn')) {
+            // Redirection propre avec exit
+            redirect()->to(base_url('admin'))->send();
+            exit; // ⛔️ Obligatoire pour stopper ici
+        }
+    }
+
     public function index(): string
     {
         $content = view('pages/login_admin');
@@ -78,12 +87,14 @@ class Admin extends BaseController
 
     public function dashboard()
     {
+        $this->checkSession();
         $content = view('pages/dashboard');
         return $this->template('Admin | Dashboard', 'dash.css', $content, 'dash.js');
     }
 
     public function utilisateur()
     {
+        $this->checkSession();
         $content = view('pages/utilisateur');
         return $this->template('Admin | Utilisateurs', 'utilisateur.css', $content, 'utilisateur.js');
     }
@@ -97,36 +108,49 @@ class Admin extends BaseController
 
     public function apropos()
     {
+        // facultatif : à protéger si nécessaire
         $content = view('pages/apropos');
         return $this->template('A propos', 'apropos.css', $content, 'apropos.js');
     }
+
     public function hero()
     {
+        $this->checkSession();
         $content = view('pages/hero');
         return $this->template('Hero', 'hero.css', $content, 'hero.js');
     }
 
-    public function tarif () {
+    public function tarif()
+    {
+        $this->checkSession();
         $content = view('pages/tarif');
         return $this->template('Tarifs', 'tarif.css', $content, 'tarif.js');
     }
 
-    public function blog () {
+    public function blog()
+    {
+        $this->checkSession();
         $content = view('pages/blog');
         return $this->template('Blog', 'blog.css', $content, 'blog.js');
     }
 
-    public function solution () {
+    public function solution()
+    {
+        $this->checkSession();
         $content = view('pages/solution');
         return $this->template('Nos solution', 'solution.css', $content, 'solution.js');
     }
 
-    public function expertise () {
+    public function expertise()
+    {
+        $this->checkSession();
         $content = view('pages/expertise');
         return $this->template('Expertises', 'expertise.css', $content, 'expertise.js');
     }
 
-    public function statistique () {
+    public function statistique()
+    {
+        $this->checkSession();
         $content = view('pages/statistique');
         return $this->template('Statistique', 'statistique.css', $content, 'statistique.js');
     }

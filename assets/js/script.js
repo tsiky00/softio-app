@@ -135,35 +135,34 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.getElementById("mainNavbar");
   let lastScrollTop = 0;
-  let scrollTimeout;
+  let scrollThreshold = 100; // ← seuil de scroll pour cacher
+  let accumulatedScroll = 0;
 
   window.addEventListener("scroll", function () {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Débounce pour optimiser les performances
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(function () {
-      handleNavbarScroll(scrollTop);
-    }, 10);
-  });
-
-  function handleNavbarScroll(scrollTop) {
-    // Ajouter/retirer la classe 'scrolled' selon la position
+    // Ajoute ou retire la classe 'scrolled' selon la position
     if (scrollTop > 50) {
       navbar.classList.add("scrolled");
     } else {
       navbar.classList.remove("scrolled");
     }
 
-    // Gestion de l'affichage/masquage selon la direction du scroll
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-      // Scroll vers le bas - cacher la navbar
-      navbar.classList.add("hidden");
+    // Détection direction scroll
+    if (scrollTop > lastScrollTop) {
+      // Scroll vers le bas
+      accumulatedScroll += scrollTop - lastScrollTop;
+
+      if (accumulatedScroll >= scrollThreshold && scrollTop > 100) {
+        navbar.classList.add("hidden");
+      }
     } else {
-      // Scroll vers le haut - afficher la navbar
+      // Scroll vers le haut
+      accumulatedScroll = 0;
       navbar.classList.remove("hidden");
     }
 
-    lastScrollTop = scrollTop;
-  }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
 });
+

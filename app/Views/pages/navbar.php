@@ -20,22 +20,22 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Accueil</a>
+                    <a class="nav-link active" href="#hero">Accueil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#expertise">Nos expertises</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Nos solutions</a>
+                    <a class="nav-link" href="#Nos-solution">Nos solutions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tarifs</a>
+                    <a class="nav-link" href="#tarifs">Tarifs</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Nous contacter</a>
+                    <a class="nav-link" href="#contact">Nous contacter</a>
                 </li>
             </ul>
 
