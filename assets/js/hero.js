@@ -26,7 +26,7 @@ $(document).ready(function () {
       data: formData,
       dataType: "json",
       contentType: false,
-      processData: false, 
+      processData: false,
       success: function (response) {
         $("#btnSpinner").addClass("d-none");
         $("#btnText").removeClass("d-none");
@@ -180,7 +180,7 @@ $(document).ready(function () {
       data: formData,
       dataType: "json",
       contentType: false,
-      processData: false, 
+      processData: false,
       success: function (res) {
         if (res.status === "success") {
           const u = res.data;
@@ -220,5 +220,21 @@ $(document).ready(function () {
         Swal.fire("Erreur", "Erreur serveur pendant la mise à jour.", "error");
       },
     });
+  });
+});
+
+/* dropdown */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("dropdownToggle");
+  const menu = document.getElementById("dropdownMenu");
+
+  toggle.addEventListener("click", function (e) {
+    e.stopPropagation();
+    menu.classList.toggle("hidden");
+  });
+
+  document.addEventListener("click", function () {
+    menu.classList.add("hidden");
   });
 });

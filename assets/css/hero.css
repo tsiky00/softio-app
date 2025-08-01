@@ -114,24 +114,24 @@
 }
 
 .onglet {
-    border-bottom: 2px solid #4a484a;
-    margin-bottom: 10px;
-    display: flex;
-    gap: 3px;
-    flex-wrap: wrap;
+  border-bottom: 2px solid #4a484a;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 3px;
+  flex-wrap: wrap;
 }
 .onglet_btn {
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    /* background-color: var(--mycolor); */
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    border: 1px solid rgba(0, 0, 0, 0.11);
-    min-width: 100px;
-    padding-inline: 5px;
-    color: #ffffff;
-    border-radius: 7px 7px 0 0;
-    border-bottom: none;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  /* background-color: var(--mycolor); */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  min-width: 100px;
+  padding-inline: 5px;
+  color: #ffffff;
+  border-radius: 7px 7px 0 0;
+  border-bottom: none;
 }
 .menu-item.active {
   background: linear-gradient(
@@ -149,7 +149,7 @@
   text-align: center;
 }
 
-.menu-item span{
+.menu-item span {
   display: inline-block;
   width: 22px !important;
 }
@@ -213,7 +213,6 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-
   .main-content {
     margin-left: 0;
     padding: 15px;
@@ -229,9 +228,63 @@
 }
 
 /* modification */
-.zone-form{
+.zone-form {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
   margin-bottom: 15px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #1877f2;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease;
+  user-select: none;
+  font-size: 18px;
+  position: relative;
+}
+
+.user-avatar:hover {
+  background-color: #145dbf;
+}
+
+.dropdown-icon {
+  margin-left: 6px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+/* Animation rotation de la flèche quand ouvert */
+.user-avatar.active .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 220px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 999;
+  font-family: inherit;
+  user-select: none;
+}
+
+.hidden {
+  display: none;
 }

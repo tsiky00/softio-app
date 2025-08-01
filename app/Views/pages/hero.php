@@ -7,8 +7,48 @@
         Softio
     </div>
     <div class="user-info">
-        <span>Administrateur</span>
-        <div class="user-avatar">A</div>
+        <!-- Avatar -->
+        <div id="dropdownToggle" class="user-avatar" style="
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #1877f2;
+      color: white;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: background-color 0.2s;
+    ">
+            A <span><i class="fas fa-chevron-down"></i></span>
+        </div>
+
+        <!-- Dropdown -->
+        <div id="dropdownMenu" class="dropdown hidden" style="
+      position: absolute;
+      top: 50px;
+      right: 0;
+      width: 200px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      overflow: hidden;
+      z-index: 999;
+      font-family: sans-serif;
+    ">
+            <div style="padding: 12px; border-bottom: 1px solid #eee; color: black;">
+                <strong>Administrateur</strong><br>
+                <small>admin@email.com</small>
+            </div>
+            <a href="/admin/profile" style="display: block; padding: 12px; text-decoration: none; color: #333; transition: background 0.2s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                👤 Voir le profil
+            </a>
+            <a href="/admin/logout" style="display: block; padding: 12px; text-decoration: none; color: #e00; transition: background 0.2s;" onmouseover="this.style.background='#fcecec'" onmouseout="this.style.background='white'">
+                🚪 Déconnexion
+            </a>
+        </div>
     </div>
 </nav>
 
@@ -23,13 +63,13 @@
             <span><i class="fa fa-users"></i></span>
             Utilisateurs
         </a>
-        <a href="#" class="menu-item">
+        <a href="<?= base_url('admin/statistique') ?>" class="menu-item">
             <span><i class="fa fa-chart-bar"></i></span>
             Statistiques
         </a>
 
-        <a href="<?= base_url('admin/hero') ?>" class="menu-item"><span><i class="fas fa-image"></i></span> Hero</a>
-        <a href="<?= base_url('admin/expertise') ?>"  class="menu-item"><span><i class="fas fa-cogs"></i></span> Expértises</a>
+        <a href="<?= base_url('admin/hero') ?>" class="menu-item active"><span><i class="fas fa-image"></i></span> Hero</a>
+        <a href="<?= base_url('admin/expertise') ?>" class="menu-item"><span><i class="fas fa-cogs"></i></span> Expértises</a>
         <a href="<?= base_url('admin/solution') ?>" class="menu-item"><span><i class="fas fa-cogs"></i></span> Nos solutions</a>
         <a href="<?= base_url('admin/tarifs') ?>" class="menu-item"><span><i class="fas fa-money-check"></i></span> Tarifs</a>
         <a href="<?= base_url('admin/apropos') ?>" class="menu-item"><span><i class="fas fa-info-circle"></i></span> À propos</a>

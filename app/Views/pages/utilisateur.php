@@ -23,7 +23,7 @@
         <a href="#" class="menu-item active">
             <span><i class="fa fa-users"></i></span>Utilisateurs
         </a>
-        <a href="#" class="menu-item">
+        <a href="<?= base_url('admin/statistique') ?>" class="menu-item">
             <span><i class="fa fa-chart-bar"></i></span>
             Statistiques
         </a>

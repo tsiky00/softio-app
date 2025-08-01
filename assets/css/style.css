@@ -57,7 +57,7 @@ body {
   font-weight: 500;
   font-size: 0.95rem;
   padding: 0 0.6rem !important;
-  margin: 0 0.1rem;
+  margin: 0 0.3rem;
   position: relative;
   transition: all 0.3s ease;
 }
@@ -310,7 +310,7 @@ body {
 /* Media Queries */
 @media (max-width: 1200px) {
   .navbar-nav .nav-link {
-    padding: 0 5px !important;
+    padding: 0 2px !important;
   }
 }
 
@@ -367,7 +367,7 @@ body {
 
 /* Hero Section */
 #hero {
-  padding: 100px 0 0 0;
+  padding: 50px 0 0 0;
   background: #fff;
 }
 
@@ -469,7 +469,7 @@ body {
   border-radius: 12px;
   height: 50px;
   line-height: 40px;
-  width: 280px;
+  width: 260px;
   color: black;
 }
 
