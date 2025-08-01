@@ -135,34 +135,35 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.getElementById("mainNavbar");
   let lastScrollTop = 0;
-  let scrollThreshold = 100; // ← seuil de scroll pour cacher
-  let accumulatedScroll = 0;
+  let accumulatedScrollDown = 0;
+  const scrollThreshold = 200; // Distance cumulée avant de cacher
+  const minScrollTop = 100; // Position minimale pour pouvoir cacher
 
   window.addEventListener("scroll", function () {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Ajoute ou retire la classe 'scrolled' selon la position
+    // Appliquer la classe 'scrolled' si on a scrollé un peu
     if (scrollTop > 50) {
       navbar.classList.add("scrolled");
     } else {
       navbar.classList.remove("scrolled");
     }
 
-    // Détection direction scroll
     if (scrollTop > lastScrollTop) {
       // Scroll vers le bas
-      accumulatedScroll += scrollTop - lastScrollTop;
+      accumulatedScrollDown += scrollTop - lastScrollTop;
 
-      if (accumulatedScroll >= scrollThreshold && scrollTop > 100) {
+      if (accumulatedScrollDown >= scrollThreshold && scrollTop > minScrollTop) {
         navbar.classList.add("hidden");
       }
     } else {
-      // Scroll vers le haut
-      accumulatedScroll = 0;
+      // Scroll vers le haut → réinitialisation
+      accumulatedScrollDown = 0;
       navbar.classList.remove("hidden");
     }
 
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    lastScrollTop = scrollTop;
   });
 });
+
 

@@ -1,4 +1,7 @@
 <?= $this->include("pages/navbar.php") ?>
+<div class="retour">
+    <a href="#hero"><i class="fa fa-arrow-up"></i></a>
+</div>
 <!-- Hero Section -->
 <section id="hero">
     <div class="container">

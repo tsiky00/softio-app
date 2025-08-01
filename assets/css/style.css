@@ -25,8 +25,8 @@ body {
   border-bottom: 1px solid var(--glass-border);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+  
 }
-
 .custom-navbar.scrolled {
   background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(20px) saturate(180%);
@@ -40,11 +40,11 @@ body {
 
 /* Logo */
 .navbar-brand img {
-  height: 75px;
+  height: 85px;
   transition: transform 0.3s ease;
-  margin-top: -20px;
-  margin-bottom: -20px;
-  margin-left: -15px !important;
+  margin-top: -25px;
+  margin-bottom: -25px;
+  margin-left: -20px !important;
 }
 
 .navbar-brand:hover img {
@@ -310,7 +310,7 @@ body {
 /* Media Queries */
 @media (max-width: 1200px) {
   .navbar-nav .nav-link {
-    padding: 0 10px !important;
+    padding: 0 5px !important;
   }
 }
 
@@ -565,4 +565,21 @@ body {
 .figure {
   margin-right: 15px;
   margin-top: 20px;
+}
+
+/* retour */
+.retour {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  background: #f4d35e;
+  color: black;
+  border-radius: 50%;
+  z-index: 999;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
 }
