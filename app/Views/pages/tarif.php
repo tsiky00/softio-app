@@ -51,16 +51,16 @@
     <div class="zone-form">
         <form id="formSend" method="post" enctype="multipart/form-data">
             <div class="mb-3">
-                <label for="titre" class="form-label">Titre</label>
+                <label for="tarif" class="form-label">Tarif</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-"></i></span>
-                    <input type="text" class="form-control" name="titre" id="titre" placeholder="" required>
-                    <div class="invalid-feedback" id="error-titre"></div>
+                    <input type="text" class="form-control" name="tarif" id="tarif" placeholder="" required>
+                    <div class="invalid-feedback" id="error-tarif"></div>
                 </div>
             </div>
 
             <div class="mb-3">
-                <label for="description" class="form-label">Votre text</label>
+                <label for="description" class="form-label">Description</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-"></i></span>
                     <input type="text" class="form-control" name="description" id="description" placeholder="" required>
@@ -69,11 +69,11 @@
             </div>
 
             <div class="mb-3">
-                <label for="image" class="form-label">Photo</label>
+                <label for="autre" class="form-label">Autre</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-"></i></span>
-                    <input type="file" class="form-control" name="image" id="image">
-                    <div class="invalid-feedback" id="error-entreprise"></div>
+                    <input type="text" class="form-control" name="autre" id="autre">
+                    <div class="invalid-feedback" id="error-autre"></div>
                 </div>
             </div>
 

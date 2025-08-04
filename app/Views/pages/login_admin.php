@@ -1,6 +1,6 @@
 <div class="login-container">
     <div class="logo">
-        <h1>Softio.app</h1>
+        <img src="<?= base_url().'assets/img/logo_noire.png'?>" alt="logo de softio" height="100px">
         <p>Panneau d'administration</p>
     </div>
 
@@ -26,7 +26,7 @@
 
         <button type="submit" class="login-btn"><i class="fas fa-right-to-bracket me-2"></i> Se connecter</button>
     </form>
-    <div id="message">
+    <div id="message" class="text-center">
         
     </div>
 </div>

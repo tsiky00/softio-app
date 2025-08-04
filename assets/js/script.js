@@ -55,9 +55,11 @@ document.addEventListener("click", function (e) {
 
 // BODY
 // contenu de la page
-// hero
+
 
 $(document).ready(function () {
+
+  // hero
   $.ajax({
     url: "getInfoHero",
     method: "GET",
@@ -78,6 +80,53 @@ $(document).ready(function () {
       $(".slogan").text(user.titre);
       $(".description").text(user.description);
       $(".hero-image img").attr("src", "assets/uploads/" + user.image);
+    }
+  }
+
+  // apropos
+  $.ajax({
+    url: "getInfoApropos",
+    method: "GET",
+    dataType: "json",
+    success: function (response) {
+      if (response.status == "success") {
+        getApropos(response.data);
+      }
+    },
+    error: function () {
+      alert("une erreur est survenue !");
+    },
+  });
+
+  function getApropos(users) {
+    for (let i = 0; i < users.length; i++) {
+      let user = users[i];
+      $(".slogan1").text(user.titre);
+      $(".description1").text(user.description);
+      $(".apropos-image img").attr("src", "assets/uploads/" + user.image);
+    }
+  }
+
+  // solution
+  $.ajax({
+    url: "getInfoSolution",
+    method: "GET",
+    dataType: "json",
+    success: function (response) {
+      if (response.status == "success") {
+        getSolution(response.data);
+      }
+    },
+    error: function () {
+      alert("une erreur est survenue !");
+    },
+  });
+
+  function getSolution(users) {
+    for (let i = 0; i < users.length; i++) {
+      let user = users[i];
+      $(".descriptionS").text(user.description);
+      $(".solution-image img").attr("src", "assets/uploads/" + user.image);
     }
   }
 });

@@ -84,6 +84,13 @@
   z-index: 999;
 }
 
+.dropdown-menu.show{
+  background: rgb(58, 57, 57)!important;
+  margin-left: 190px !important;
+  margin-top: -41px !important;
+  font-size: 14px;
+}
+
 .onglet {
   border-bottom: 2px solid #4a484a;
   margin-bottom: 10px;
@@ -440,4 +447,4 @@
     background-color: #34495e;
 }
 
-
+/* drop down */

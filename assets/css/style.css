@@ -44,7 +44,7 @@ body {
   transition: transform 0.3s ease;
   margin-top: -25px;
   margin-bottom: -25px;
-  margin-left: -20px !important;
+  margin-left: -30px !important;
 }
 
 .navbar-brand:hover img {
@@ -76,7 +76,7 @@ body {
   font-weight: 600;
   font-size: 0.9rem;
   padding: 0.75rem 1rem;
-  border-radius: 12px;
+  border-radius: 5px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   margin: 0 0.1rem;
   width: 120px;
@@ -310,7 +310,7 @@ body {
 /* Media Queries */
 @media (max-width: 1200px) {
   .navbar-nav .nav-link {
-    padding: 0 2px !important;
+    padding: 0 3px !important;
   }
 }
 
@@ -468,14 +468,14 @@ body {
 #essai {
   border-radius: 12px;
   height: 50px;
-  line-height: 40px;
+  line-height: 38px;
   width: 260px;
   color: black;
 }
 
 /* apropos */
 #image2 {
-  background-image: url("../img/Annotation\ 2025-07-29\ 093548.png");
+  /* background-image: url("../img/Annotation\ 2025-07-29\ 093548.png"); */
   background-repeat: no-repeat;
   background-size: cover;
   height: 450px;
@@ -483,7 +483,7 @@ body {
 }
 
 #apropos {
-  background-color: #e4e1de;
+  background-color: #f2f2f2;
   clip-path: polygon(
     0% 10%, 10% 0%, 30% 5%, 50% 0%, 70% 7%, 90% 0%, 100% 10%, 
     100% 100%, 0% 100%
@@ -570,16 +570,16 @@ body {
 /* retour */
 .retour {
   position: fixed;
-  bottom: 50px;
-  right: 50px;
+  bottom: 35px;
+  right: 35px;
   background: #f4d35e;
   color: black;
   border-radius: 50%;
   z-index: 999;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }

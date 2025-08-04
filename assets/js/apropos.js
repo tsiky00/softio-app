@@ -21,7 +21,7 @@ $(document).ready(function () {
     let formData = new FormData(this);
 
     $.ajax({
-      url: "hero/create",
+      url: "apropos/create",
       method: "POST",
       data: formData,
       dataType: "json",
@@ -99,10 +99,10 @@ $(document).ready(function () {
           <td>${user.description}</td>
           <td>${user.image}</td>
           <td class="text-center">
-              <a class="btn btn-primary edit-btn" data-id="${user.idHero}" title="Modifier">
+              <a class="btn btn-primary edit-btn" data-id="${user.idApropos}" title="Modifier">
                   <i class="fa fa-edit"></i>
               </a>
-              <a class="btn btn-danger delete-btn" data-id="${user.idHero}" title="Supprimer">
+              <a class="btn btn-danger delete-btn" data-id="${user.idApropos}" title="Supprimer">
                   <i class="fa fa-trash"></i>
               </a>
           </td>
@@ -147,7 +147,7 @@ $(document).ready(function () {
       if (result.isConfirmed) {
         $.ajax({
           method: "POST",
-          url: "hero/delete/" + id,
+          url: "apropos/delete/" + id,
           dataType: "json",
           success: function (response) {
             if (response.status == "success") {
@@ -175,7 +175,7 @@ $(document).ready(function () {
     const userId = $(this).data("id");
 
     $.ajax({
-      url: "hero/get-hero/" + userId,
+      url: "apropos/get-apropos/" + userId,
       method: "GET",
       data: formData,
       dataType: "json",
@@ -203,7 +203,7 @@ $(document).ready(function () {
   $("#formEdit").on("submit", function (e) {
     e.preventDefault();
     $.ajax({
-      url: "hero/update-hero",
+      url: "apropos/update-apropos",
       method: "POST",
       data: $(this).serialize(),
       dataType: "json",

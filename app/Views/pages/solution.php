@@ -50,17 +50,9 @@
 
     <div class="zone-form">
         <form id="formSend" method="post" enctype="multipart/form-data">
-            <div class="mb-3">
-                <label for="titre" class="form-label">Titre</label>
-                <div class="input-group">
-                    <span class="input-group-text"><i class="fas fa-"></i></span>
-                    <input type="text" class="form-control" name="titre" id="titre" placeholder="" required>
-                    <div class="invalid-feedback" id="error-titre"></div>
-                </div>
-            </div>
 
             <div class="mb-3">
-                <label for="description" class="form-label">Votre text</label>
+                <label for="description" class="form-label">Votre description</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-"></i></span>
                     <input type="text" class="form-control" name="description" id="description" placeholder="" required>
@@ -73,7 +65,7 @@
                 <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-"></i></span>
                     <input type="file" class="form-control" name="image" id="image">
-                    <div class="invalid-feedback" id="error-entreprise"></div>
+                    <div class="invalid-feedback" id="error-image"></div>
                 </div>
             </div>
 
@@ -90,7 +82,6 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Titre</th>
                     <th>Description</th>
                     <th>Image</th>
                     <th>Action</th>

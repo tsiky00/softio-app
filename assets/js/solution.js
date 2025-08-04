@@ -21,7 +21,7 @@ $(document).ready(function () {
     let formData = new FormData(this);
 
     $.ajax({
-      url: "hero/create",
+      url: "solution/create",
       method: "POST",
       data: formData,
       dataType: "json",
@@ -70,7 +70,7 @@ $(document).ready(function () {
   function loadUsers() {
     $.ajax({
       method: "GET",
-      url: "getInfoHero",
+      url: "getInfoSolution",
       dataType: "json",
       success: function (response) {
         if (response.status == "success") {
@@ -94,15 +94,14 @@ $(document).ready(function () {
       var user = users[i];
       rows += `
       <tr>
-          <td>${user.idHero}</td>
-          <td>${user.titre}</td>
+          <td>${user.idSolution}</td>
           <td>${user.description}</td>
           <td>${user.image}</td>
           <td class="text-center">
-              <a class="btn btn-primary edit-btn" data-id="${user.idHero}" title="Modifier">
+              <a class="btn btn-primary edit-btn" data-id="${user.idSolution}" title="Modifier">
                   <i class="fa fa-edit"></i>
               </a>
-              <a class="btn btn-danger delete-btn" data-id="${user.idHero}" title="Supprimer">
+              <a class="btn btn-danger delete-btn" data-id="${user.idSolution}" title="Supprimer">
                   <i class="fa fa-trash"></i>
               </a>
           </td>
@@ -147,7 +146,7 @@ $(document).ready(function () {
       if (result.isConfirmed) {
         $.ajax({
           method: "POST",
-          url: "hero/delete/" + id,
+          url: "solution/delete/" + id,
           dataType: "json",
           success: function (response) {
             if (response.status == "success") {
@@ -175,7 +174,7 @@ $(document).ready(function () {
     const userId = $(this).data("id");
 
     $.ajax({
-      url: "hero/get-hero/" + userId,
+      url: "solution/get-solution/" + userId,
       method: "GET",
       data: formData,
       dataType: "json",
@@ -185,7 +184,6 @@ $(document).ready(function () {
         if (res.status === "success") {
           const u = res.data;
           $("#edit-id").val(u.idHero);
-          $("#edit-titre").val(u.titre);
           $("#edit-description").val(u.description);
           $("#edit-image").val(u.image);
           $("#editModal").modal("show");
@@ -203,7 +201,7 @@ $(document).ready(function () {
   $("#formEdit").on("submit", function (e) {
     e.preventDefault();
     $.ajax({
-      url: "hero/update-hero",
+      url: "solution/update-solution",
       method: "POST",
       data: $(this).serialize(),
       dataType: "json",

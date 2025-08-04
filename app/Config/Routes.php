@@ -48,6 +48,28 @@ $routes->post('admin/hero/update-hero', 'Hero::updateHero');
 $routes->get('admin/getInfoHero', 'Hero::getInfo');
 
 /* section apropos */
+$routes->post('admin/apropos/create', 'Apropos::create');
+$routes->get('getInfoApropos', 'Apropos::getInfo');
+$routes->post('admin/apropos/delete/(:num)', 'Apropos::delete/$1');
+$routes->get('admin/apropos/get-hero/(:num)', 'Apropos::getApropos/$1');
+$routes->post('admin/apropos/update-hero', 'Apropos::updateApropos');
+$routes->get('admin/getInfoApropos', 'Apropos::getInfo');
+
+/* section solution */
+$routes->post('admin/solution/create', 'Solution::create');
+$routes->get('getInfoSolution', 'Solution::getInfo');
+$routes->post('admin/solution/delete/(:num)', 'Solution::delete/$1');
+$routes->get('admin/solution/get-hero/(:num)', 'Solution::getSolution/$1');
+$routes->post('admin/solution/update-hero', 'Solution::updateSolution');
+$routes->get('admin/getInfoSolution', 'Solution::getInfo');
+
+/* section tarifs */
+$routes->post('admin/tarif/create', 'Tarif::create');
+$routes->get('getInfoTarif', 'Tarif::getInfo');
+$routes->post('admin/tarif/delete/(:num)', 'Tarif::delete/$1');
+$routes->get('admin/tarif/get-hero/(:num)', 'Tarif::getTarif/$1');
+$routes->post('admin/tarif/update-hero', 'Tarif::updateTarif');
+$routes->get('admin/getInfoTarif', 'Tarif::getInfo');
 
 /* send message */
 $routes->post('send-message', 'Message::save') ;

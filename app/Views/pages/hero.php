@@ -113,7 +113,7 @@
                 <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-"></i></span>
                     <input type="file" class="form-control" name="image" id="image">
-                    <div class="invalid-feedback" id="error-entreprise"></div>
+                    <div class="invalid-feedback" id="error-image"></div>
                 </div>
             </div>
 

@@ -70,7 +70,7 @@ $(document).ready(function () {
   function loadUsers() {
     $.ajax({
       method: "GET",
-      url: "getInfoHero",
+      url: "getInfoExpertise",
       dataType: "json",
       success: function (response) {
         if (response.status == "success") {
@@ -94,7 +94,7 @@ $(document).ready(function () {
       var user = users[i];
       rows += `
       <tr>
-          <td>${user.idHero}</td>
+          <td>${user.idExpertise}</td>
           <td>${user.titre}</td>
           <td>${user.description}</td>
           <td>${user.image}</td>
@@ -184,7 +184,7 @@ $(document).ready(function () {
       success: function (res) {
         if (res.status === "success") {
           const u = res.data;
-          $("#edit-id").val(u.idHero);
+          $("#edit-id").val(u.idExpertise);
           $("#edit-titre").val(u.titre);
           $("#edit-description").val(u.description);
           $("#edit-image").val(u.image);

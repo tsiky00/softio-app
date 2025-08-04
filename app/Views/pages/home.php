@@ -26,14 +26,14 @@
         <div class="row">
             <div class="col-lg-6" data-aos="zoom-in" data-aos-duration="1000">
                 <div class="row" id="centre">
-                    <h1 class="text-justify mb-2 d-block passer">Passer au vert n'est plus aussi chère !</h1>
-                    <p class="text-justify mb-2 d-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi odio vero eveniet cumque commodi doloremque autem tempore inventore quia expedita. Quam, reiciendis dolorem. Vero provident ratione amet maiores in! Ratione.</p>
+                    <h1 class="text-justify mb-2 d-block passer slogan1"></h1>
+                    <p class="text-justify mb-2 d-block description1"></p>
                     <button class="voir btn btn-primary w-25 mt-2">VOIR PLUS</button>
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
-                <div class="row" id="image2">
-
+                <div class="apropos-image">
+                    <img src='' alt="Tableau de bord de softio" data-aos="fade-left" data-aos-duration="1000">
                 </div>
             </div>
         </div>
@@ -96,62 +96,15 @@
         <p class="text-center">Puisque internet est utilisé tous les jours, votre entreprise et votre marque doit être visible sur le toit.</p>
         <div class="row gap-4">
             <div class="col text-center">
-                <figure class="figure">
-                    <img src="<?= base_url() . 'assets/img/Fujifilm.png' ?>"
-                        class="figure-img img-fluid rounded-circle"
+                <figure class="figure" style="max-width: 120px;">
+                    <div class="solution-image">
+                        <img src=""
+                        class="figure-img img-fluid rounded-circle "
                         alt="Description"
                         style="max-width: 120px;">
+                    </div>
                     <figcaption class="figure-caption mt-2">
-                        <h4>Texte</h4>
-                    </figcaption>
-                </figure>
-
-                <figure class="figure">
-                    <img src="<?= base_url() . 'assets/img/Fujifilm.png' ?>"
-                        class="figure-img img-fluid rounded-circle"
-                        alt="Description"
-                        style="max-width: 120px;">
-                    <figcaption class="figure-caption mt-2">
-                        <h4>Texte</h4>
-                    </figcaption>
-                </figure>
-
-                <figure class="figure">
-                    <img src="<?= base_url() . 'assets/img/Fujifilm.png' ?>"
-                        class="figure-img img-fluid rounded-circle"
-                        alt="Description"
-                        style="max-width: 120px;">
-                    <figcaption class="figure-caption mt-2">
-                        <h4>Texte</h4>
-                    </figcaption>
-                </figure>
-
-                <figure class="figure">
-                    <img src="<?= base_url() . 'assets/img/Fujifilm.png' ?>"
-                        class="figure-img img-fluid rounded-circle"
-                        alt="Description"
-                        style="max-width: 120px;">
-                    <figcaption class="figure-caption mt-2">
-                        <h4>Texte</h4>
-                    </figcaption>
-                </figure>
-
-                <figure class="figure">
-                    <img src="<?= base_url() . 'assets/img/Fujifilm.png' ?>"
-                        class="figure-img img-fluid rounded-circle"
-                        alt="Description"
-                        style="max-width: 120px;">
-                    <figcaption class="figure-caption mt-2">
-                        <h4>Texte</h4>
-                    </figcaption>
-                </figure>
-                <figure class="figure">
-                    <img src="<?= base_url() . 'assets/img/Fujifilm.png' ?>"
-                        class="figure-img img-fluid rounded-circle"
-                        alt="Description"
-                        style="max-width: 120px;">
-                    <figcaption class="figure-caption mt-2">
-                        <h4>Texte</h4>
+                        <h4 class="descriptionS"></h4>
                     </figcaption>
                 </figure>
             </div>
