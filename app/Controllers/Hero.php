@@ -53,7 +53,6 @@ class Hero extends BaseController
         return $this->response->setJSON([
             'status' => 'success',
             'message' => 'Ajout réussie !',
-            'redirect' => ''
         ]);
     }
 
@@ -127,24 +126,32 @@ class Hero extends BaseController
         }
     }
 
-    public function update() {
+    public function updateHero()
+    {
         $model = new Hero_model();
-        $id = $this->request->getPost('idUtilisateur');
+        $id = $this->request->getPost('idHero');
         if (!$id) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'ID manquant']);
         }
 
-        // Récupération de l'image
-        $file = $this->request->getFile('image');
-        $newName = null;
-
         $data = [
             'titre'       => $this->request->getPost('titre'),
-            'description' => $this->request->getPost('description'),
-            'image'       => $newName
+            'description' => $this->request->getPost('description')
         ];
 
-        $model->save($data);
+        // Gestion de l'image si modifiée
+        $file = $this->request->getFile('image');
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $newName = $file->getRandomName();
+            $file->move(FCPATH . 'assets/uploads', $newName);
+            $data['image'] = $newName;
+        } else {
+            // Si pas de nouvelle image, garder l'ancienne
+            $old = $model->find($id);
+            if ($old && isset($old['image'])) {
+                $data['image'] = $old['image'];
+            }
+        }
 
         if ($model->update($id, $data)) {
             return $this->response->setJSON(['status' => 'success', 'message' => 'Modification réussie']);

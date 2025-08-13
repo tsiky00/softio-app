@@ -17,38 +17,37 @@ class Apropos extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-            // Retour JSON des erreurs de validation
             return $this->response->setJSON([
                 'status' => 'validation',
                 'errors' => $this->validator->getErrors()
             ]);
         }
 
-        // Récupération de l'image
         $file = $this->request->getFile('image');
         $newName = null;
-
         if ($file && $file->isValid() && !$file->hasMoved()) {
-            // Renommer l'image de façon unique
             $newName = $file->getRandomName();
-            // Déplacer l'image dans le dossier public/uploads/
             $file->move(FCPATH . 'assets/uploads', $newName);
         }
 
-        // Sauvegarde dans la base
         $model = new Apropos_model();
         $data = [
             'titre'       => $this->request->getPost('titre'),
             'description' => $this->request->getPost('description'),
-            'image'       => $newName // On stocke juste le nom du fichier
+            'image'       => $newName
         ];
 
-        $model->save($data);
-
-        return $this->response->setJSON([
-            'status' => 'success',
-            'message' => 'Ajout réussie !',
-        ]);
+        if ($model->save($data)) {
+            return $this->response->setJSON([
+                'status' => 'success',
+                'message' => 'Ajout réussie !',
+            ]);
+        } else {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'Erreur lors de l\'ajout.'
+            ]);
+        }
     }
 
 
@@ -117,28 +116,36 @@ class Apropos extends BaseController
         if ($user) {
             return $this->response->setJSON(['status' => 'success', 'data' => $user]);
         } else {
-            return $this->response->setJSON(['status' => 'error', 'message' => 'Hero introuvable']);
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Apropos introuvable']);
         }
     }
 
-    public function update() {
+    public function update()
+    {
         $model = new Apropos_model();
-        $id = $this->request->getPost('idUtilisateur');
+        $id = $this->request->getPost('idApropos');
         if (!$id) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'ID manquant']);
         }
 
-        // Récupération de l'image
-        $file = $this->request->getFile('image');
-        $newName = null;
-
         $data = [
             'titre'       => $this->request->getPost('titre'),
-            'description' => $this->request->getPost('description'),
-            'image'       => $newName
+            'description' => $this->request->getPost('description')
         ];
 
-        $model->save($data);
+        // Gestion de l'image si modifiée
+        $file = $this->request->getFile('image');
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $newName = $file->getRandomName();
+            $file->move(FCPATH . 'assets/uploads', $newName);
+            $data['image'] = $newName;
+        } else {
+            // Si pas de nouvelle image, garder l'ancienne
+            $old = $model->find($id);
+            if ($old && isset($old['image'])) {
+                $data['image'] = $old['image'];
+            }
+        }
 
         if ($model->update($id, $data)) {
             return $this->response->setJSON(['status' => 'success', 'message' => 'Modification réussie']);

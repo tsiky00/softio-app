@@ -28,12 +28,36 @@ class Accueil extends BaseController
     public function inscription()
     {
         $content = view('pages/inscription');
-        return $this->template('Insription', 'inscription.css', $content, 'inscription.js');
+        return $this->template('Inscription', 'inscription.css', $content, 'inscription.js');
     }
 
     public function seConnecte()
     {
         $content = view('pages/connect');
-        return $this->template('Se connecté', 'connect.css', $content, 'connect.js');
+        return $this->template('Se connecter', 'connect.css', $content, 'connect.js');
+    }
+
+    public function cgv()
+    {
+        $content = view('pages/cgv/cgv');
+        return $this->template('CGV', 'cgv.css', $content, 'script.js');
+    }
+
+    public function cgu()
+    {
+        $content = view('pages/cgv/cgu');
+        return $this->template('CGU', 'cgv.css', $content, 'script.js');
+    }
+
+    public function politique()
+    {
+        $content = view('pages/cgv/politique');
+        return $this->template('Politique de confidentialité', 'cgv.css', $content, 'script.js');
+    }
+
+    public function faq()
+    {
+        $content = view('pages/cgv/faq');
+        return $this->template('FAQ', 'cgv.css', $content, 'script.js');
     }
 }

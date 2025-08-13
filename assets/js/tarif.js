@@ -6,6 +6,20 @@ window.toggleSidebar = function () {
 };
 
 $(document).ready(function () {
+  // Aperçu image ajout (drag & drop et label stylisé)
+  function showImagePreview(input, imgSelector, labelTextSelector) {
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        $(imgSelector).attr("src", e.target.result).show();
+        if (labelTextSelector) $(labelTextSelector).css("visibility", "hidden");
+      };
+      reader.readAsDataURL(input.files[0]);
+    } else {
+      $(imgSelector).hide();
+      if (labelTextSelector) $(labelTextSelector).css("visibility", "visible");
+    }
+  }
   loadUsers();
 
   // Soumission du formulaire d'ajout
@@ -17,16 +31,11 @@ $(document).ready(function () {
     $("#btnSpinner").removeClass("d-none");
     $("#btnText").addClass("d-none");
 
-    // Utilisation de FormData pour inclure le fichier
-    let formData = new FormData(this);
-
     $.ajax({
       url: "tarif/create",
       method: "POST",
-      data: formData,
+      data: $(this).serialize(),
       dataType: "json",
-      contentType: false,
-      processData: false, 
       success: function (response) {
         $("#btnSpinner").addClass("d-none");
         $("#btnText").removeClass("d-none");
@@ -94,7 +103,7 @@ $(document).ready(function () {
       var user = users[i];
       rows += `
       <tr>
-          <td>${user.idHero}</td>
+          <td>${user.idTarif}</td>
           <td>${user.tarif}</td>
           <td>${user.description}</td>
           <td>${user.autre}</td>
@@ -147,7 +156,7 @@ $(document).ready(function () {
       if (result.isConfirmed) {
         $.ajax({
           method: "POST",
-          url: "hero/delete/" + id,
+          url: "tarif/delete/" + id,
           dataType: "json",
           success: function (response) {
             if (response.status == "success") {
@@ -173,14 +182,10 @@ $(document).ready(function () {
   // Remplir le formulaire de modification
   $(document).on("click", ".edit-btn", function () {
     const userId = $(this).data("id");
-
     $.ajax({
-      url: "hero/get-hero/" + userId,
+      url: "tarif/get-tarif/" + userId,
       method: "GET",
-      data: formData,
       dataType: "json",
-      contentType: false,
-      processData: false, 
       success: function (res) {
         if (res.status === "success") {
           const u = res.data;
@@ -188,7 +193,7 @@ $(document).ready(function () {
           $("#edit-tarif").val(u.tarif);
           $("#edit-description").val(u.description);
           $("#edit-autre").val(u.autre);
-          $("#editModal").modal("show");
+          $("#registerModal").modal("show");
         } else {
           Swal.fire("Erreur", res.message, "error");
         }
@@ -202,14 +207,26 @@ $(document).ready(function () {
   // Soumission du formulaire de modification
   $("#formEdit").on("submit", function (e) {
     e.preventDefault();
+    // Spinner ON
+    $("#editBtnSpinner").removeClass("d-none");
+    $("#editBtnText").addClass("d-none");
+    $("#formEdit button[type='submit']").prop("disabled", true);
     $.ajax({
-      url: "tarif/update-tarif",
+      url:
+        (typeof BASE_URL !== "undefined" ? BASE_URL : "/") +
+        "admin/tarif/update-tarif",
       method: "POST",
       data: $(this).serialize(),
       dataType: "json",
       success: function (res) {
+        // Spinner OFF
+        $("#editBtnSpinner").addClass("d-none");
+        $("#editBtnText").removeClass("d-none");
+        $("#formEdit button[type='submit']").prop("disabled", false);
         if (res.status === "success") {
-          $("#editModal").modal("hide");
+          $("#registerModal").modal("hide");
+          // Reset form et aperçu image
+          $("#formEdit")[0].reset();
           Swal.fire("Succès", res.message, "success");
           loadUsers();
         } else {
@@ -217,8 +234,27 @@ $(document).ready(function () {
         }
       },
       error: function () {
+        $("#editBtnSpinner").addClass("d-none");
+        $("#editBtnText").removeClass("d-none");
+        $("#formEdit button[type='submit']").prop("disabled", false);
         Swal.fire("Erreur", "Erreur serveur pendant la mise à jour.", "error");
       },
     });
+  });
+});
+
+/* dropdown */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("dropdownToggle");
+  const menu = document.getElementById("dropdownMenu");
+
+  toggle.addEventListener("click", function (e) {
+    e.stopPropagation();
+    menu.classList.toggle("hidden");
+  });
+
+  document.addEventListener("click", function () {
+    menu.classList.add("hidden");
   });
 });

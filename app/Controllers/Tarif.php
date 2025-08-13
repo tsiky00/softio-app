@@ -104,7 +104,7 @@ class Tarif extends BaseController
 
     public function update() {
         $model = new Tarif_model();
-        $id = $this->request->getPost('idUtilisateur');
+        $id = $this->request->getPost('idTarif');
         if (!$id) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'ID manquant']);
         }
@@ -114,8 +114,6 @@ class Tarif extends BaseController
             'description' => $this->request->getPost('description'),
             'autre'       => $this->request->getPost('autre')
         ];
-
-        $model->save($data);
 
         if ($model->update($id, $data)) {
             return $this->response->setJSON(['status' => 'success', 'message' => 'Modification réussie']);

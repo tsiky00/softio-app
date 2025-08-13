@@ -6,6 +6,7 @@ use App\Models\Admin_model;
 
 class Admin extends BaseController
 {
+    // Affiche le formulaire de changement de mot de passe
     private function template($title, $link, $page, $script = null)
     {
         return view('template/template_view', [
@@ -19,13 +20,13 @@ class Admin extends BaseController
     private function checkSession()
     {
         if (!session()->get('isLoggedIn')) {
-            // Redirection propre avec exit
+
             redirect()->to(base_url('admin'))->send();
-            exit; // ⛔️ Obligatoire pour stopper ici
+            exit;
         }
     }
 
-    public function index(): string
+    public function index()
     {
         $content = view('pages/login_admin');
         return $this->template('Admin | Login', 'admin.css', $content, 'admin.js');
@@ -42,7 +43,7 @@ class Admin extends BaseController
 
         if ($user) {
             if (password_verify($password, $user['password'])) {
-                $session = session();
+                $session = \Config\Services::session();
                 $session->set([
                     'idAdmin' => $user['idAdmin'],
                     'nom' => $user['nom'],
@@ -69,21 +70,65 @@ class Admin extends BaseController
         }
     }
 
-    public function insert()
+    public function changePassword()
     {
-        $nom = "tsiky";
-        $prenom = "Rajaonarivelo";
-        $email = "tsiky.@gmail.com";
-        $password = "12345678";
-
-        $model = new Admin_model();
-        $model->save([
-            'nom' => $nom,
-            'prenom' => $prenom,
-            'email' => $email,
-            'password' => password_hash($password, PASSWORD_DEFAULT)
-        ]);
+        $this->checkSession();
+        $content = view('pages/admin_change_password');
+        return $this->template('Changer le mot de passe', 'admin.css', $content,'admin.js');
     }
+
+    // Traite la soumission du formulaire de changement de mot de passe
+    public function updatePassword()
+    {
+        $this->checkSession();
+        $model = new \App\Models\Admin_model();
+        $session = session();
+        $adminId = $session->get('idAdmin');
+        $oldPassword = $this->request->getPost('old_password');
+        $newPassword = $this->request->getPost('new_password');
+        $confirmPassword = $this->request->getPost('confirm_password');
+
+        // Vérifier que les champs sont remplis
+        if (!$oldPassword || !$newPassword || !$confirmPassword) {
+            return redirect()->back()->with('error', 'Tous les champs sont obligatoires.');
+        }
+
+        // Vérifier la correspondance des nouveaux mots de passe
+        if ($newPassword !== $confirmPassword) {
+            return redirect()->back()->with('error', 'Les nouveaux mots de passe ne correspondent pas.');
+        }
+
+        // Récupérer l'admin courant
+        $admin = $model->find($adminId);
+        if (!$admin) {
+            return redirect()->back()->with('error', 'Utilisateur non trouvé.');
+        }
+
+        // Vérifier l'ancien mot de passe
+        if (!password_verify($oldPassword, $admin['password'])) {
+            return redirect()->back()->with('error', 'Ancien mot de passe incorrect.');
+        }
+
+        // Mettre à jour le mot de passe
+        $model->update($adminId, ['password' => password_hash($newPassword, PASSWORD_DEFAULT)]);
+        return redirect()->to(base_url('admin'))->with('success', 'Mot de passe modifié avec succès.');
+    }
+
+    // public function insert()
+    // {
+    //     $nom = "tsiky";
+    //     $prenom = "Rajaonarivelo";
+    //     $email = "tsiky.@gmail.com";
+    //     $password = "12345678";
+
+    //     $model = new Admin_model();
+    //     $model->save([
+    //         'nom' => $nom,
+    //         'prenom' => $prenom,
+    //         'email' => $email,
+    //         'password' => password_hash($password, PASSWORD_DEFAULT)
+    //     ]);
+    // }
 
     public function dashboard()
     {
@@ -106,52 +151,95 @@ class Admin extends BaseController
         return redirect()->to(base_url('admin'));
     }
 
-    public function apropos()
-    {
-        // facultatif : à protéger si nécessaire
-        $content = view('pages/apropos');
-        return $this->template('A propos', 'apropos.css', $content, 'apropos.js');
-    }
-
     public function hero()
     {
         $this->checkSession();
         $content = view('pages/hero');
-        return $this->template('Hero', 'hero.css', $content, 'hero.js');
+        return $this->template('Hero', 'dash.css', $content, 'hero.js');
     }
 
     public function tarif()
     {
         $this->checkSession();
         $content = view('pages/tarif');
-        return $this->template('Tarifs', 'tarif.css', $content, 'tarif.js');
+        return $this->template('Tarifs', 'dash.css', $content, 'tarif.js');
     }
 
     public function blog()
     {
         $this->checkSession();
         $content = view('pages/blog');
-        return $this->template('Blog', 'blog.css', $content, 'blog.js');
+        return $this->template('Blog', 'dash.css', $content, 'blog.js');
     }
 
     public function solution()
     {
         $this->checkSession();
         $content = view('pages/solution');
-        return $this->template('Nos solution', 'solution.css', $content, 'solution.js');
+        return $this->template('Nos solution', 'dash.css', $content, 'solution.js');
     }
 
     public function expertise()
     {
         $this->checkSession();
         $content = view('pages/expertise');
-        return $this->template('Expertises', 'expertise.css', $content, 'expertise.js');
+        return $this->template('Expertises', 'dash.css', $content, 'expertise.js');
     }
 
     public function statistique()
     {
         $this->checkSession();
         $content = view('pages/statistique');
-        return $this->template('Statistique', 'statistique.css', $content, 'statistique.js');
+        return $this->template('Statistique', 'dash.css', $content, 'statistique.js');
     }
+
+    public function service()
+    {
+        $this->checkSession();
+        $content = view('pages/service');
+        return $this->template('Service', 'dash.css', $content, 'service.js');
+    }
+
+    public function apropos()
+    {
+        $this->checkSession();
+        $content = view('pages/apropos');
+        return $this->template('A-propos', 'dash.css', $content, 'apropos.js');
+    }
+
+    public function contact()
+    {
+        $this->checkSession();
+        $content = view('pages/contact');
+        return $this->template('Contact', 'dash.css', $content, 'contact.js');
+    }
+
+    public function CGV ()
+    {
+        $this->checkSession();
+        $content = view('pages/cgv');
+        return $this->template('Conditions Générales de Vente', 'dash.css', $content, 'condition.js');
+    }
+
+    public function CGU ()
+    {
+        $this->checkSession();
+        $content = view('pages/cgu');
+        return $this->template('Conditions Générales d\'Utilisation', 'dash.css', $content, 'condition.js');
+    }
+
+    public function politiqueConfidentialite ()
+    {
+        $this->checkSession();
+        $content = view('pages/politique');
+        return $this->template('Politique de Confidentialité', 'dash.css', $content, 'condition.js');
+    }
+
+    public function FAQ ()
+    {
+        $this->checkSession();
+        $content = view('pages/faq');
+        return $this->template('FAQ', 'dash.css', $content, 'condition.js');
+    }
+
 }

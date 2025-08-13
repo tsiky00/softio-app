@@ -44,46 +44,16 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h1 class="passer mb-4 d-block">Nos expertises</h1>
-                <p class="mb-4 d-block">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias et cupiditate quibusdam suscipit eligendi illum deserunt corporis error consequatur enim, vero quasi distinctio nam impedit facere architecto, ratione temporibus ab.</p>
-                <div class="image3 mt-2"></div>
+                <h1 class="passer mb-4 d-block sloganE"></h1>
+                <p class="mb-4 d-block descriptionE"></p>
+                <div class="expertise-image mt-2">
+                    <img src='' alt="Tableau de bord de softio" data-aos="fade-left" data-aos-duration="1000">
+                </div>
                 <button class="btn expert mt-4 mb-2">Contacter un expert</button>
             </div>
             <div class="col-lg-6">
-                <div class="row d-flex gap-3">
-                    <div class=" col-md-6 col-sm-3 card" style="width: 48%;">
-                        <img src="<?= base_url() . 'assets/img/Annotation 2025-07-29 093548.png' ?>" alt="image dans le card">
-                        <div class="card-body">
-                            <h5 class="card-title">Developpement web</h5>
-                            <p class="card-text">Some example text.Some example text.</p>
-                            <a href="#" class="btn btn-primary plus d-flex justify-content-center">Voir plus</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 card" style="width: 48%;">
-                        <img src="<?= base_url() . 'assets/img/Annotation 2025-07-29 093548.png' ?>" alt="image dans le card">
-                        <div class="card-body">
-                            <h5 class="card-title">Developpement web</h5>
-                            <p class="card-text">Some example text.Some example text.</p>
-                            <a href="#" class="btn btn-primary plus d-flex justify-content-center">See Profile</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 card" style="width: 48%;">
-                        <img src="<?= base_url() . 'assets/img/Annotation 2025-07-29 093548.png' ?>" alt="image dans le card">
-                        <div class="card-body">
-                            <h5 class="card-title">Developpement web</h5>
-                            <p class="card-text">Some example text.Some example text.</p>
-                            <a href="#" class="btn btn-primary plus d-flex justify-content-center">See Profile</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 card" style="width: 48%;">
-                        <img src="<?= base_url() . 'assets/img/Annotation 2025-07-29 093548.png' ?>" alt="image dans le card">
-                        <div class="card-body">
-                            <h5 class="card-title">Developpement web</h5>
-                            <p class="card-text">Some example text.Some example text.</p>
-                            <a href="#" class="btn btn-primary plus d-flex justify-content-center">See Profile</a>
-                        </div>
-                    </div>
+                <div class="row d-flex gap-3 services-container">
+                    <!-- Les cards seront ajoutées ici via AJAX -->
                 </div>
             </div>
         </div>
@@ -94,21 +64,8 @@
     <div class="container py-5">
         <h1 class="passer text-center">Nos solutions</h1>
         <p class="text-center">Puisque internet est utilisé tous les jours, votre entreprise et votre marque doit être visible sur le toit.</p>
-        <div class="row gap-4">
-            <div class="col text-center">
-                <figure class="figure" style="max-width: 120px;">
-                    <div class="solution-image">
-                        <img src=""
-                        class="figure-img img-fluid rounded-circle "
-                        alt="Description"
-                        style="max-width: 120px;">
-                    </div>
-                    <figcaption class="figure-caption mt-2">
-                        <h4 class="descriptionS"></h4>
-                    </figcaption>
-                </figure>
-            </div>
-            <!-- Répéter pour chaque élément -->
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-4 solutions-container text-center">
+            <!-- Les solutions seront ajoutées ici via AJAX -->
         </div>
     </div>
 </section>
@@ -119,38 +76,8 @@
             <h1 class="text-center mb-5">Nos Tarifs</h1>
         </div>
         <div class="row justify-content-center g-4">
-            <!-- Carte 1 -->
-            <div class="col-md-5">
-                <div class="card shadow border-0 h-100">
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Location</h4>
-                        <h5 class="text-muted">49 000 Ar / mois</h5>
-                        <p class="mt-3">Parfait pour les particuliers ou les petites structures.</p>
-                        <ul class="list-unstyled my-4">
-                            <li>✔ 10 utilisateurs</li>
-                            <li>✔ Support par e-mail</li>
-                            <li>✔ 5 Go de stockage</li>
-                        </ul>
-                        <a href="#" class="btn w-100 contacter">Choisir</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Carte 2 -->
-            <div class="col-md-5">
-                <div class="card shadow border-0 h-100">
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Achat définitif</h4>
-                        <h5 class="text-muted">99 000 Ar / mois</h5>
-                        <p class="mt-3">Adaptée aux entreprises ou aux projets ambitieux.</p>
-                        <ul class="list-unstyled my-4">
-                            <li>✔ Utilisateurs illimités</li>
-                            <li>✔ Support prioritaire</li>
-                            <li>✔ 50 Go de stockage</li>
-                        </ul>
-                        <a href="#" class="btn w-100 contacter">Choisir</a>
-                    </div>
-                </div>
+            <div class="row justify-content-center g-4" id="tarifs-container">
+                <!-- Les cartes seront ajoutées ici via AJAX -->
             </div>
         </div>
     </div>

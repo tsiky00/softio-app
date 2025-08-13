@@ -1,6 +1,6 @@
 <div class="login-container">
     <div class="logo">
-        <img src="<?= base_url().'assets/img/logo_noire.png'?>" alt="logo de softio" height="100px">
+        <img src="<?= base_url() . 'assets/img/logo_noire.png' ?>" alt="logo de softio" height="100px">
         <p>Panneau d'administration</p>
     </div>
 
@@ -24,9 +24,13 @@
             <a href="#" class="forgot-password">Mot de passe oublié ?</a>
         </div>
 
-        <button type="submit" class="login-btn"><i class="fas fa-right-to-bracket me-2"></i> Se connecter</button>
+        <button type="submit" id="loginBtn" class="login-btn">
+            <i class="fas fa-spinner fa-spin d-none" id="spinner"></i>
+            <i class="fas fa-right-to-bracket me-2" id="loginIcon"></i>
+            Se connecter
+        </button>
     </form>
     <div id="message" class="text-center">
-        
+
     </div>
 </div>

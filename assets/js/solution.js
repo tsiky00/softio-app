@@ -6,6 +6,61 @@ window.toggleSidebar = function () {
 };
 
 $(document).ready(function () {
+  // Aperçu image ajout (drag & drop et label stylisé)
+  function showImagePreview(input, imgSelector, labelTextSelector) {
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        $(imgSelector).attr("src", e.target.result).show();
+        if (labelTextSelector) $(labelTextSelector).css("visibility", "hidden");
+      };
+      reader.readAsDataURL(input.files[0]);
+    } else {
+      $(imgSelector).hide();
+      if (labelTextSelector) $(labelTextSelector).css("visibility", "visible");
+    }
+  }
+
+  $("#image").on("change", function () {
+    showImagePreview(this, "#preview-image", "#image-label-text");
+  });
+  // Drag & drop sur label ajout
+  $("#image-label")
+    .on("dragover", function (e) {
+      e.preventDefault();
+      $(this).css("border-color", "#007bff");
+    })
+    .on("dragleave drop", function (e) {
+      e.preventDefault();
+      $(this).css("border-color", "#aaa");
+    })
+    .on("drop", function (e) {
+      e.preventDefault();
+      const files = e.originalEvent.dataTransfer.files;
+      $("#image")[0].files = files;
+      $("#image").trigger("change");
+    });
+
+  // Aperçu image modification
+  $("#edit-image").on("change", function () {
+    showImagePreview(this, "#edit-preview-image", "#edit-image-label-text");
+  });
+  // Drag & drop sur label modif
+  $("#edit-image-label")
+    .on("dragover", function (e) {
+      e.preventDefault();
+      $(this).css("border-color", "#007bff");
+    })
+    .on("dragleave drop", function (e) {
+      e.preventDefault();
+      $(this).css("border-color", "#aaa");
+    })
+    .on("drop", function (e) {
+      e.preventDefault();
+      const files = e.originalEvent.dataTransfer.files;
+      $("#edit-image")[0].files = files;
+      $("#edit-image").trigger("change");
+    });
   loadUsers();
 
   // Soumission du formulaire d'ajout
@@ -26,7 +81,7 @@ $(document).ready(function () {
       data: formData,
       dataType: "json",
       contentType: false,
-      processData: false, 
+      processData: false,
       success: function (response) {
         $("#btnSpinner").addClass("d-none");
         $("#btnText").removeClass("d-none");
@@ -43,6 +98,9 @@ $(document).ready(function () {
           setTimeout(function () {
             $("#registerModal").modal("hide");
             $("#formSend")[0].reset();
+            // Reset image preview et label
+            $("#preview-image").hide();
+            $("#image-label-text").show();
           }, 1500);
         } else if (response.status === "error") {
           Swal.fire("Erreur", response.message, "error");
@@ -92,11 +150,18 @@ $(document).ready(function () {
     var rows = "";
     for (var i = 0; i < users.length; i++) {
       var user = users[i];
+      let imgHtml = user.image
+        ? `<img src="${
+            typeof BASE_URL !== "undefined" ? BASE_URL : "/"
+          }assets/uploads/${
+            user.image
+          }" alt="img" style="width:60px;height:60px;object-fit:cover;border-radius:12px;display:block;margin:0 auto;box-shadow:0 2px 8px #0001;">`
+        : "";
       rows += `
       <tr>
           <td>${user.idSolution}</td>
           <td>${user.description}</td>
-          <td>${user.image}</td>
+          <td>${imgHtml}</td>
           <td class="text-center">
               <a class="btn btn-primary edit-btn" data-id="${user.idSolution}" title="Modifier">
                   <i class="fa fa-edit"></i>
@@ -172,21 +237,30 @@ $(document).ready(function () {
   // Remplir le formulaire de modification
   $(document).on("click", ".edit-btn", function () {
     const userId = $(this).data("id");
-
     $.ajax({
       url: "solution/get-solution/" + userId,
       method: "GET",
-      data: formData,
       dataType: "json",
-      contentType: false,
-      processData: false, 
       success: function (res) {
         if (res.status === "success") {
           const u = res.data;
-          $("#edit-id").val(u.idHero);
+          $("#edit-id").val(u.idSolution);
           $("#edit-description").val(u.description);
-          $("#edit-image").val(u.image);
-          $("#editModal").modal("show");
+          // Aperçu image existante
+          if (u.image) {
+            var imgUrl =
+              (typeof BASE_URL !== "undefined" ? BASE_URL : "/") +
+              "assets/uploads/" +
+              u.image;
+            $("#edit-preview-image").attr("src", imgUrl).show();
+            $("#edit-image-label-text").css("visibility", "hidden");
+          } else {
+            $("#edit-preview-image").hide();
+            $("#edit-image-label-text").css("visibility", "visible");
+          }
+          // Reset input file
+          $("#edit-image").val("");
+          $("#registerModal").modal("show");
         } else {
           Swal.fire("Erreur", res.message, "error");
         }
@@ -200,23 +274,59 @@ $(document).ready(function () {
   // Soumission du formulaire de modification
   $("#formEdit").on("submit", function (e) {
     e.preventDefault();
+    // Spinner ON
+    $("#editBtnSpinner").removeClass("d-none");
+    $("#editBtnText").addClass("d-none");
+    $("#formEdit button[type='submit']").prop("disabled", true);
+    var formData = new FormData(this);
     $.ajax({
-      url: "solution/update-solution",
+      url:
+        (typeof BASE_URL !== "undefined" ? BASE_URL : "/") +
+        "admin/solution/update-solution",
       method: "POST",
-      data: $(this).serialize(),
+      data: formData,
       dataType: "json",
+      contentType: false,
+      processData: false,
       success: function (res) {
+        // Spinner OFF
+        $("#editBtnSpinner").addClass("d-none");
+        $("#editBtnText").removeClass("d-none");
+        $("#formEdit button[type='submit']").prop("disabled", false);
         if (res.status === "success") {
-          $("#editModal").modal("hide");
-          Swal.fire("Succès", res.message, "success");
+          $("#registerModal").modal("hide");
+          // Reset form et aperçu image
+          $("#formEdit")[0].reset();
+          $("#edit-preview-image").hide();
+          $("#edit-image-label-text").css("visibility", "visible");
           loadUsers();
+          Swal.fire("Succès", res.message, "success");
         } else {
           Swal.fire("Erreur", res.message, "error");
         }
       },
       error: function () {
+        $("#editBtnSpinner").addClass("d-none");
+        $("#editBtnText").removeClass("d-none");
+        $("#formEdit button[type='submit']").prop("disabled", false);
         Swal.fire("Erreur", "Erreur serveur pendant la mise à jour.", "error");
       },
     });
+  });
+});
+
+/* dropdown */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("dropdownToggle");
+  const menu = document.getElementById("dropdownMenu");
+
+  toggle.addEventListener("click", function (e) {
+    e.stopPropagation();
+    menu.classList.toggle("hidden");
+  });
+
+  document.addEventListener("click", function () {
+    menu.classList.add("hidden");
   });
 });

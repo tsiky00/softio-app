@@ -25,7 +25,6 @@ body {
   border-bottom: 1px solid var(--glass-border);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  
 }
 .custom-navbar.scrolled {
   background: rgba(255, 255, 255, 0.95) !important;
@@ -65,7 +64,6 @@ body {
 .navbar-nav .nav-link:hover {
   color: var(--primary-color) !important;
 }
-
 
 .navbar-nav .nav-link.active {
   color: var(--primary-color) !important;
@@ -485,8 +483,15 @@ body {
 #apropos {
   background-color: #f2f2f2;
   clip-path: polygon(
-    0% 10%, 10% 0%, 30% 5%, 50% 0%, 70% 7%, 90% 0%, 100% 10%, 
-    100% 100%, 0% 100%
+    0% 10%,
+    10% 0%,
+    30% 5%,
+    50% 0%,
+    70% 7%,
+    90% 0%,
+    100% 10%,
+    100% 100%,
+    0% 100%
   );
   min-height: 400px;
   margin: 0;
@@ -570,8 +575,8 @@ body {
 /* retour */
 .retour {
   position: fixed;
-  bottom: 35px;
-  right: 35px;
+  bottom: 20px;
+  right: 20px;
   background: #f4d35e;
   color: black;
   border-radius: 50%;

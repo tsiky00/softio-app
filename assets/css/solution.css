@@ -114,24 +114,24 @@
 }
 
 .onglet {
-    border-bottom: 2px solid #4a484a;
-    margin-bottom: 10px;
-    display: flex;
-    gap: 3px;
-    flex-wrap: wrap;
+  border-bottom: 2px solid #4a484a;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 3px;
+  flex-wrap: wrap;
 }
 .onglet_btn {
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    /* background-color: var(--mycolor); */
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    border: 1px solid rgba(0, 0, 0, 0.11);
-    min-width: 100px;
-    padding-inline: 5px;
-    color: #ffffff;
-    border-radius: 7px 7px 0 0;
-    border-bottom: none;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  /* background-color: var(--mycolor); */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  min-width: 100px;
+  padding-inline: 5px;
+  color: #ffffff;
+  border-radius: 7px 7px 0 0;
+  border-bottom: none;
 }
 .menu-item.active {
   background: linear-gradient(
@@ -149,7 +149,7 @@
   text-align: center;
 }
 
-.menu-item span{
+.menu-item span {
   display: inline-block;
   width: 22px !important;
 }
@@ -213,7 +213,6 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-
   .main-content {
     margin-left: 0;
     padding: 15px;
@@ -229,9 +228,16 @@
 }
 
 /* modification */
-.zone-form{
+.zone-form {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
   margin-bottom: 15px;
+}
+
+#sidebar .dropdown-menu{
+  background: rgb(58, 57, 57) !important;
+  margin-left: 190px !important;
+  margin-top: -41px !important;
+  font-size: 14px;
 }
